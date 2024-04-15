@@ -1,0 +1,52 @@
+body{
+    margin: 0;
+}
+#board{
+    height: 100vh;
+    padding: 0, 3rem;
+}
+#waitingSide{
+    height: 40%;
+    border-bottom: 3px black solid;
+}
+#activeSide{
+    height: 58%;
+}
+
+.hand{
+    height: 100%;
+    width: 25%;
+    border-right: 2px black solid;
+    float: left;
+    margin-right: 5rem;
+}
+
+.activeRow{
+    display: flex;
+    flex-wrap: nowrap;
+    align-content: space-evenly;
+    height: 50%;
+    padding-top: 1rem;
+}
+.benchRow{
+    display: flex;
+    flex-wrap: nowrap;
+    align-content: space-evenly;
+    height: 50%;
+}
+
+.bench, .discardPile, .activePokemon, .prizes, .energy, .deck{
+    border: 2px black solid;
+    height: 90%;
+    width: 12rem;
+    margin: 0 3rem;
+}
+
+.discardPile, .deck{
+    margin-left: auto;
+}
+
+.prizes, .energy{
+    border: 2px lightgrey dotted;
+}
+
