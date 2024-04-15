@@ -1,16 +1,18 @@
 body{
     margin: 0;
+    height: 100vh;
 }
 #board{
     height: 100vh;
     padding: 0, 3rem;
 }
 #waitingSide{
-    height: 40%;
-    border-bottom: 3px black solid;
+    height: 49%;
+    background-color: rgb(224, 150, 150);
 }
 #activeSide{
-    height: 58%;
+    height: 49%;
+    background-color: rgb(134, 134, 211);
 }
 
 .hand{
@@ -26,7 +28,6 @@ body{
     flex-wrap: nowrap;
     align-content: space-evenly;
     height: 50%;
-    padding-top: 1rem;
 }
 .benchRow{
     display: flex;
@@ -38,8 +39,8 @@ body{
 .bench, .discardPile, .activePokemon, .prizes, .energy, .deck{
     border: 2px black solid;
     height: 90%;
-    width: 12rem;
-    margin: 0 3rem;
+    width: 10rem;
+    margin: 0.5rem 3rem;
 }
 
 .discardPile, .deck{
@@ -50,3 +51,31 @@ body{
     border: 2px lightgrey dotted;
 }
 
+hr{
+    background-color: black;
+    margin: 0;
+    height:5px
+}
+
+
+#DeckPicker{
+    display: flex;
+    flex-wrap:nowrap;
+    justify-content: space-evenly;
+    text-align: center;
+    & div{
+        border: 3px black solid;
+        & img{
+            height: 25rem;
+        }
+        & button{
+            height: 2rem;
+            margin-bottom: 1rem;
+        }
+    }
+}
+
+#DeckPickerTitle{
+    text-align: center;
+    padding: 5rem;
+}

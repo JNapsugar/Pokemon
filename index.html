@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hu">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,24 +7,17 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div id="container">
-    <div id="board">
-        <div id="waitingSide"></div>
-        <div id="activeSide">
-            <div class="hand"></div>
-            <div class="activeRow">
-                <div class="prizes"></div>
-                <div class="activePokemon"></div>
-                <div class="energy"></div>
-                <div class="deck"></div>
-            </div>
-            <div class="benchRow">
-                <div class="bench"></div>
-                <div class="bench"></div>
-                <div class="bench"></div>
-                <div class="discardPile"></div>
-            </div>
-        </div>
+    <div id="container">
+    <h1 id="DeckPickerTitle">1. játékos választ paklit</h1>
+    <div id="DeckPicker">
+        <div><img src="./Img/Types/grass.jpg"><h2>Grass</h2>
+            <button class="DeckPickerBtn" id="GrassPickBtn">Választás</button><br><button class="ViewDeckBtn" id="GrassViewBtn">Kártyák megtekintése</button></div>
+        <div><img src="./Img/Types/lightning.jpg"><h2>Lightning</h2>
+            <button class="DeckPickerBtn" id="LightningPickBtn">Választás</button><br><button class="ViewDeckBtn" id="LightningViewBtn">Kártyák megtekintése</button></div>
+        <div><img src="./Img/Types/water.jpg"><h2>Water</h2>
+            <button class="DeckPickerBtn" id="WaterPickBtn">Választás</button><br><button class="ViewDeckBtn" id="WaterViewBtn">Kártyák megtekintése</button></div>
+        <div><img src="./Img/Types/fire.jpg"><h2>Fire</h2>
+            <button class="DeckPickerBtn" id="FirePickBtn">Választás</button><br><button class="ViewDeckBtn" id="FireViewBtn">Kártyák megtekintése</button></div>
     </div>
 </div>
 <script src="script.js"></script>
