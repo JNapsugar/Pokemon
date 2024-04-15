@@ -7,12 +7,12 @@ body{
     padding: 0, 3rem;
 }
 #waitingSide{
-    height: 49%;
-    background-color: rgb(224, 150, 150);
+    height: 50%;
+    background-color: lightcoral;
 }
 #activeSide{
-    height: 49%;
-    background-color: rgb(134, 134, 211);
+    height: 50%;
+    background-color: lightskyblue;
 }
 
 .hand{
@@ -21,6 +21,12 @@ body{
     border-right: 2px black solid;
     float: left;
     margin-right: 5rem;
+    overflow: scroll;
+    text-align: center;
+    & img{
+        width: 70%;
+        margin: 1rem;
+    }
 }
 
 .activeRow{
@@ -41,14 +47,19 @@ body{
     height: 90%;
     width: 10rem;
     margin: 0.5rem 3rem;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .discardPile, .deck{
     margin-left: auto;
 }
 
+
 .prizes, .energy{
     border: 2px lightgrey dotted;
+    text-align: center;
 }
 
 hr{
@@ -79,3 +90,24 @@ hr{
     text-align: center;
     padding: 5rem;
 }
+
+.PlacedEnergy, .PlacedEnergy:nth-child(2), .PlacedEnergy:nth-child(3){
+
+    position: relative;
+    display: block;
+    margin: auto;
+}
+
+.PlacedEnergy{
+    rotate: 90deg;
+    height: 55%;
+    top: -5%;
+
+}
+.PlacedEnergy:nth-child(2) {
+    top: -30%;
+}
+  .PlacedEnergy:nth-child(3) {
+    top: -60%;
+}
+
