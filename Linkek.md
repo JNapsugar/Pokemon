@@ -1,6 +1,9 @@
 Tutorial  
 https://www.wikihow.com/Play-With-Pok%C3%A9mon-Cards
 
+Játékszabályok és segítség
+https://drive.google.com/file/d/1gLxGxMP4TIkLoBAf5zLSbui3UKvtYYwF/view
+
 Base set kártyák  
 https://bulbapedia.bulbagarden.net/wiki/Base_Set_(TCG),  
 https://www.digitaltq.com/pokemon-tcg/base-set
