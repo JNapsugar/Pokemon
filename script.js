@@ -12,7 +12,8 @@ const Exeggcute = {card_type:"BasicPokemon", name:"Exeggcute", hp:60, skill1_nam
 const Exeggutor = {card_type:"Stage1Pokemon", name:"Exeggutor", hp:120, skill1_name:"Seed Bomb", skill1_dmg:"40", skill1_cost:"2", skill2_name:"Barrage Impact", skill2_dmg:"80", skill2_cost:"3", dmgCoins:[]};
 const Scyther = {card_type:"BasicPokemon", name:"Scyther", hp:80, skill1_name:"X-Scissor", skill1_dmg:"20", skill1_cost:"1", skill1_spec: "coinFlipDmg", skill1_spec_amount: 40, dmgCoins:[]};
 const GrassEnergy = {card_type:"energy", type:"grass", name:"BasicGrassEnergy"}
-let GrassDeck = [Bulbasaur, Ivysaur, Ivysaur, Oddish, Oddish, Gloom, Exeggcute, Exeggcute, Exeggutor, Scyther, GrassEnergy, GrassEnergy, GrassEnergy, potion, switchActive]
+var GrassDeck = [Bulbasaur, Ivysaur, Ivysaur, Oddish, Oddish, Gloom, Exeggcute, Exeggcute, Exeggutor, Scyther, GrassEnergy, GrassEnergy, GrassEnergy, potion, switchActive]
+// fuj var
 //#endregion
 
 //#region Lightning deck
@@ -21,6 +22,7 @@ const Pikachu = {card_type:"BasicPokemon", name:"Pikachu", hp:70, skill1_name:"Q
 const LightningEnergy = {card_type:"energy", type:"lightning"}
 //let LightningDeck = [Pikachu, Raichu, Raichu, Magnemite, Magnemite, Magneton, Voltorb, Voltorb, Electrode, Electabuzz, LightningEnergy, LightningEnergy, LightningEnergy, potion, switchActive]
 //#endregion
+
 
 //#endregion
 
@@ -52,13 +54,15 @@ for (let i = 0; i < decks.length; i++) {
     decks[i].addEventListener("click", Deck); 
 }
 
-
 let player1Picked = false
 function Deck(){
     if (!player1Picked) {
         player1.deckType =  this.id.replace("PickBtn","")
-        //player1.deck = this.id.replace("PickBtn","Deck") 
-        player1.deck = [...GrassDeck]
+        player1.deck = [...window[this.id.replace("PickBtn", "Deck")]];
+
+        //console.log(player1.deck)
+        //console.log(GrassDeck)
+
         document.getElementById("container").innerHTML=`
         <h1 id="DeckPickerTitle">2. játékos választ paklit</h1>
         <div id="DeckPicker">
@@ -83,9 +87,9 @@ function Deck(){
             <div id="waitingSide">
             <div class="hand" id="WaitingHand"></div>
                 <div class="benchRow">
-                    <div class="bench"></div>
-                    <div class="bench"></div>
-                    <div class="bench"></div>
+                    <div class="bench" id="WaitingBench1"></div>
+                    <div class="bench" id="WaitingBench2"></div>
+                    <div class="bench" id="WaitingBench3"></div>
                     <div class="discardPile"></div>
                 </div>
                 <div class="activeRow">
@@ -160,7 +164,7 @@ function Setup(player) {
     for (let i = 0; i < 3; i++) {
         let random = Math.floor(Math.random() * player.deck.length);
         player.hand.push(player.deck[random]);
-        document.getElementById("ActiveHand").innerHTML += `<img src="./Img/Cards/${player.deckType}/${player.deck[random].name}.jpg">`;
+        document.getElementById("ActiveHand").innerHTML += `<img class="card" id="${player.deck[random].name}" src="./Img/Cards/${player.deckType}/${player.deck[random].name}.jpg">`;
         player.deck.splice(random, 1);
     }
 }
@@ -172,12 +176,15 @@ function Turn(actingPlayer, waitingPlayer) {
     //Aktiv jatekos
     document.getElementById("ActiveHand").innerHTML = '<button id="EndTurnBtn">Kör vége</button><br>'
     for (let i = 0; i < actingPlayer.hand.length; i++) {
-        document.getElementById("ActiveHand").innerHTML += `<img src="./Img/Cards/${actingPlayer.deckType}/${actingPlayer.hand[i].name}.jpg">`;  
+        document.getElementById("ActiveHand").innerHTML += `<img class="card" id="${actingPlayer.hand[i].name}" src="./Img/Cards/${actingPlayer.deckType}/${actingPlayer.hand[i].name}.jpg">`;  
     }
-    for (let i = 0; i < 3; i++) {
-        if (actingPlayer.bench[i] != "") {
+    for (let i = 0; i <= 2; i++) {
+        if (actingPlayer.bench[i+1] != "") {
             document.getElementById(`ActiveBench${i+1}`).backgroundImage = `url(./Img/Cards/${actingPlayer.deckType}/${actingPlayer.bench[i].name}.jpg)`;
-        } 
+        }
+        else{
+            document.getElementById(`ActiveBench${i+1}`).backgroundImage = ""; 
+        }
     }
     document.getElementById("ActiveSideEnergy").innerHTML = ""
     for (let i = 0; i < actingPlayer.energy; i++) {
@@ -190,10 +197,13 @@ function Turn(actingPlayer, waitingPlayer) {
     for (let i = 0; i < waitingPlayer.hand.length; i++) {
         document.getElementById("WaitingHand").innerHTML += `<img src="./Img/Cardback.jpg">`;  
     }
-    for (let i = 0; i < 3; i++) {
+    for (let i = 0; i <= 2; i++) {
         if (waitingPlayer.bench[i] != "") {
             document.getElementById(`WaitingBench${i+1}`).backgroundImage = `url(./Img/Cards/${waitingPlayer.deckType}/${waitingPlayer.bench[i].name}.jpg)`;
         } 
+        else{
+            document.getElementById(`WaitingBench${i+1}`).backgroundImage = ``;
+        }
     }
     document.getElementById("WaitingSideEnergy").innerHTML = ""
     for (let i = 0; i < waitingPlayer.energy; i++) {
@@ -201,5 +211,43 @@ function Turn(actingPlayer, waitingPlayer) {
     }
     document.getElementById("WaitingSidePokemon").style.backgroundImage = `url(./Img/Cards/${waitingPlayer.deckType}/${waitingPlayer.activePokemon.name}.jpg)`;
     //#endregion
+    let cards = document.getElementsByClassName("card")
+        for (let i = 0; i < cards.length; i++) {
+        cards[i].addEventListener("click", PlayCard); }
+
+    function PlayCard() {
+        switch (GrassDeck.filter(x => x.name === this.id)[0].card_type) {
+            case "BasicPokemon":
+                if (actingPlayer.bench[0] == "") {
+                    actingPlayer.bench[0] = GrassDeck.filter(x => x.name === this.id)[0]
+                    document.getElementById("ActiveBench1").style.backgroundImage = `url(./Img/Cards/${actingPlayer.deckType}/${this.id}.jpg)`;    
+                }
+                else if(actingPlayer.bench[1] == "") {
+                    actingPlayer.bench[1] = GrassDeck.filter(x => x.name === this.id)[0]
+                    document.getElementById("ActiveBench2").style.backgroundImage = `url(./Img/Cards/${actingPlayer.deckType}/${this.id}.jpg)`;
+                    
+                }
+                else if(actingPlayer.bench[2] == "") {
+                    actingPlayer.bench[2] = GrassDeck.filter(x => x.name === this.id)[0]
+                    document.getElementById("ActiveBench3").style.backgroundImage = `url(./Img/Cards/${actingPlayer.deckType}/${this.id}.jpg)`;
+                }
+                else{
+                    alert("Nincs üres bench")
+                }
+
+                break;
+        
+            default:
+                break;
+        }
+        console.log(player1.bench)
+        console.log(player2.bench)
+    }
 }
 
+// // Easter Egg
+// setInterval(() => {
+//     console.log(GrassDeck[0].name.toUpperCase());
+//     let BULBASAUR = new Audio("Img/bulbasaur.mp3");
+//     BULBASAUR.play()
+// }, 1000);

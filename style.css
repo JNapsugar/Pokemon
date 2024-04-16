@@ -21,7 +21,7 @@ body{
     border-right: 2px black solid;
     float: left;
     margin-right: 5rem;
-    overflow: scroll;
+    overflow-y: scroll;
     text-align: center;
     & img{
         width: 70%;
