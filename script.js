@@ -312,7 +312,7 @@ function Turn(actingPlayer, waitingPlayer) {
     }
     
     function Evolve(Stage1, basicCard, place) {
-        basicCard.style.backgroundImage=`url(./Img/Cards/${actingPlayer.deckType}/${Stage1.name}.jpg)`
+        basicCard.innerHTML=`<img class="card animated" src="./Img/Cards/${actingPlayer.deckType}/${Stage1.name}.jpg">`
         actingPlayer.bench[place-1] = Stage1
         console.log(actingPlayer.bench[place-1]);
         playable = true;

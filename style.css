@@ -52,6 +52,10 @@ body{
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
+    & img{
+        height: 100%;
+        border-radius: 5%;
+    }
 }
 
 .discardPile, .deck{
@@ -103,7 +107,7 @@ hr{
 .PlacedEnergy{
     margin-top: 0.2rem;
     rotate: 90deg;
-    height: 50%;
+    height: 50% !important;
     top: -8%;
 }
 .PlacedEnergy:nth-child(2) {
@@ -116,3 +120,20 @@ hr{
     top: -100%;
 }
 
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.card {
+    animation: fadeIn 0.3s ease-out;
+}
+
+.bench {
+    animation: slideIn 0.5s ease-out;
+}
