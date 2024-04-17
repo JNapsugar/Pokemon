@@ -1,54 +1,53 @@
-
 //#region Cards
 //sorry, de nem látom át ezért kicsit tagolom, ha baj majd kitöröljük
 const potion = {card_type:"potion", name:"Potion"}
 const switchActive = {card_type:"switch", name:"Switch"}
+
 //#region Grass deck
-const Bulbasaur = {card_type:"BasicPokemon", name:"Bulbasaur", hp:70, skill1_name:"Tackle", skill1_dmg:"10", skill1_cost:"1", skill2_name:"Vine Whip", skill2_dmg:"30", skill2_cost:"2", evolution:"Ivysaur", dmgCoins:[]};
+const Bulbasaur = {card_type:"BasicPokemon", name:"Bulbasaur", hp:70, skill1_name:"Tackle", skill1_dmg:"10", skill1_cost:"1", skill2_name:"Vine Whip", skill2_dmg:"30", skill2_cost:"2", evolution:"Ivysaur", special_skill: false, place:"", dmgCoins:[]};
 
-const Ivysaur = {card_type:"Stage1Pokemon", name:"Ivysaur", hp:100, skill1_name:"Vine Whip", skill1_dmg:"30", skill1_cost:"3", skill2_name:"Razor Leaf", skill2_dmg:"60", skill2_cost:"3", dmgCoins:[]};
+const Ivysaur = {card_type:"Stage1Pokemon", name:"Ivysaur", hp:100, skill1_name:"Vine Whip", skill1_dmg:"30", skill1_cost:"3", skill2_name:"Razor Leaf", skill2_dmg:"60", skill2_cost:"3", special_skill: false, place:"", dmgCoins:[]};
 
-const Oddish = {card_type:"BasicPokemon", name:"Oddish", hp:50, skill1_name:"Absorb", skill1_dmg:"10", skill1_cost:"1", skill1_spec: "heal", skill1_spec_amount: 10 ,evolution:"Gloom", dmgCoins:[]};
+const Oddish = {card_type:"BasicPokemon", name:"Oddish", hp:50, skill1_name:"Absorb", skill1_dmg:"10", skill1_cost:"1", special_skill: true ,evolution:"Gloom", special_skill: false, place:"", dmgCoins:[]};
 
-const Gloom = {card_type:"Stage1Pokemon", name:"Gloom", hp:90, skill1_name:"Mega Drain", skill1_dmg:"60", skill1_cost:"2", skill1_spec_amount: 20, dmgCoins:[]};
+const Gloom = {card_type:"Stage1Pokemon", name:"Gloom", hp:90, skill1_name:"Mega Drain", skill1_dmg:"60", skill1_cost:"2", special_skill: true, special_skill: false, place:"", dmgCoins:[]};
 
-const Exeggcute = {card_type:"BasicPokemon", name:"Exeggcute", hp:60, skill1_name:"Rollout", skill1_dmg:"40", skill1_cost:"2", evolution:"Exeggutor", dmgCoins:[]};
+const Exeggcute = {card_type:"BasicPokemon", name:"Exeggcute", hp:60, skill1_name:"Rollout", skill1_dmg:"40", skill1_cost:"2", evolution:"Exeggutor", special_skill: false, place:"", dmgCoins:[]};
 
-const Exeggutor = {card_type:"Stage1Pokemon", name:"Exeggutor", hp:120, skill1_name:"Seed Bomb", skill1_dmg:"40", skill1_cost:"2", skill2_name:"Barrage Impact", skill2_dmg:"80", skill2_cost:"3", dmgCoins:[]};
+const Exeggutor = {card_type:"Stage1Pokemon", name:"Exeggutor", hp:120, skill1_name:"Seed Bomb", skill1_dmg:"40", skill1_cost:"2", skill2_name:"Barrage Impact", skill2_dmg:"80", skill2_cost:"3", special_skill: false, place:"", dmgCoins:[]};
 
-const Scyther = {card_type:"BasicPokemon", name:"Scyther", hp:80, skill1_name:"X-Scissor", skill1_dmg:"20", skill1_cost:"1", skill1_spec: "coinFlipDmg", skill1_spec_amount: 40, dmgCoins:[]};
+const Scyther = {card_type:"BasicPokemon", name:"Scyther", hp:80, skill1_name:"X-Scissor", skill1_dmg:"20", skill1_cost:"1", special_skill: true, place:"", dmgCoins:[]};
 
 const GrassEnergy = {card_type:"energy", type:"grass", name:"BasicGrassEnergy"}
 
-var GrassDeck = [Bulbasaur, Ivysaur, Ivysaur, Oddish, Oddish, Gloom, Exeggcute, Exeggcute, Exeggutor, Scyther, GrassEnergy, GrassEnergy, GrassEnergy, potion, switchActive]
+var GrassDeck = [Bulbasaur, Ivysaur, {...Ivysaur}, Oddish, {...Oddish}, Gloom, Exeggcute, {...Exeggcute}, Exeggutor, Scyther, GrassEnergy, GrassEnergy, GrassEnergy, potion, switchActive]
 // fuj var
 //#endregion
 
 
 //#region Lightning deck
-const Pikachu = {card_type:"BasicPokemon", name:"Pikachu", hp:70, skill1_name:"Quick Attack", skill1_dmg:"10", skill1_cost:"1", skill2_name:"Electro Ball", skill2_dmg:"30", skill2_cost:"2", evolution:"Raichu", dmgCoins:[]};
+const Pikachu = {card_type:"BasicPokemon", name:"Pikachu", hp:70, skill1_name:"Quick Attack", skill1_dmg:"10", skill1_cost:"1", skill2_name:"Electro Ball", skill2_dmg:"30", skill2_cost:"2", evolution:"Raichu", special_skill: false, place:"", dmgCoins:[]};
 
-const Raichu = {card_type:"Stage1Pokemon", name:"Raichu", hp:100, skill1_name:"Electro Ball", skill1_dmg:"30", skill1_cost:"1", skill2_name:"Thunder", skill2_dmg:"60", skill2_cost:"3", dmgCoins:[]};
+const Raichu = {card_type:"Stage1Pokemon", name:"Raichu", hp:100, skill1_name:"Electro Ball", skill1_dmg:"30", skill1_cost:"1", skill2_name:"Thunder", skill2_dmg:"60", skill2_cost:"3", special_skill: false, place:"", dmgCoins:[]};
 
-const Magnemite = {card_type:"BasicPokemon", name:"Magnemite", hp:60, skill1_name:"Thunder Shock", skill1_dmg:"20", skill1_cost:"1", evolution:"Magneton", dmgCoins:[]};
+const Magnemite = {card_type:"BasicPokemon", name:"Magnemite", hp:60, skill1_name:"Thunder Shock", skill1_dmg:"20", skill1_cost:"1", evolution:"Magneton", special_skill: false, place:"", dmgCoins:[]};
 
-//Spec. Attack kell. -- Magnetic Circle --
-const Magneton = {card_type:"Stage1Pokemon", name:"Magneton", hp:110, skill1_name:"Thunder Shock", skill1_dmg:"20", skill1_cost:"1", skill2_name:"Magnetic Circle" ,skill2_dmg:"20+", skill2_cost:"2", dmgCoins:[]};
-
-const Voltorb = {card_type:"BasicPokemon", name:"Voltorb", hp:50, skill1_name:"Rollout", skill1_dmg:"10", skill1_cost:"1", skill2_name:"Spark", skill2_dmg:"30", skill1_cost:"2" ,evolution:"Electrode",dmgCoins:[]};
-
-//Spec. Attack kell. -- Single Shot Blast --
-const Electrode = {card_type:"Stage1Pokemon", name:"Electrode", hp:80, skill1_name:"Speed Attack", skill1_dmg:"40", skill1_cost:"1", skill2_name:"Single Shot Blast", skill2_dmg:"120", skill2_cost:"3" ,dmgCoins:[]};
-
-const Electabuzz = {card_type:"BasicPokemon", name:"Electabuzz", hp:90, skill1_name:"Low Kick", skill1_dmg:"20", skill1_cost:"1",  skill2_name:"Electro Punch", skill2_dmg:"50", skill2_cost:"2", dmgCoins:[]};
+const Magneton = {card_type:"Stage1Pokemon", name:"Magneton", hp:110, skill1_name:"Thunder Shock", skill1_dmg:"20", skill1_cost:"1", skill2_name:"Magnetic Circle" ,skill2_dmg:"20", skill2_cost:"2", special_skill: true, place:"", dmgCoins:[]};
 
 
+const Voltorb = {card_type:"BasicPokemon", name:"Voltorb", hp:50, skill1_name:"Rollout", skill1_dmg:"10", skill1_cost:"1", skill2_name:"Spark", skill2_dmg:"30", skill1_cost:"2" ,evolution:"Electrode", special_skill: false, place:"", dmgCoins:[]};
 
-const LightningEnergy = {card_type:"energy", type:"lightning"}
-//let LightningDeck = [Pikachu, Raichu, Raichu, Magnemite, Magnemite, Magneton, Voltorb, Voltorb, Electrode, Electabuzz, LightningEnergy, LightningEnergy, LightningEnergy, potion, switchActive]
+const Electrode = {card_type:"Stage1Pokemon", name:"Electrode", hp:80, skill1_name:"Speed Attack", skill1_dmg:"40", skill1_cost:"1", skill2_name:"Single Shot Blast", skill2_dmg:"120", skill2_cost:"3", special_skill: true, place:"", dmgCoins:[]};
+
+const Electabuzz = {card_type:"BasicPokemon", name:"Electabuzz", hp:90, skill1_name:"Low Kick", skill1_dmg:"20", skill1_cost:"1",  skill2_name:"Electro Punch", skill2_dmg:"50", skill2_cost:"2", special_skill: false, place:"", dmgCoins:[]};
+
+const LightningEnergy = {card_type:"energy", type:"lightning", name:"BasicLightningEnergy"}
+
+var LightningDeck = [Pikachu, Raichu, {...Raichu}, Magnemite, {...Magnemite}, Magneton, Voltorb, {...Voltorb}, Electrode, Electabuzz, LightningEnergy, LightningEnergy, LightningEnergy, potion, switchActive]
 //#endregion
 
-
+const allDecks = [GrassDeck, LightningDeck, [], []]
+const deckTypes = ["Grass", "Lightning", "Fire", "Water"]
 //#endregion
 
 //#region Players
@@ -59,7 +58,8 @@ let player1 = {
     bench : ["","",""],
     energy : 1,
     prize : 0,
-    hand : []
+    hand : [],
+    discarded : []
 }
 
 let player2 = {
@@ -69,87 +69,79 @@ let player2 = {
     bench : ["","",""],
     energy : 1,
     prize : 0,
-    hand : []
+    hand : [],
+    discarded : []
 }
 //#endregion
 
-//#region Deck választás, tábla felallitas
-let decks = document.getElementsByClassName("DeckPickerBtn")
-for (let i = 0; i < decks.length; i++) {
-    decks[i].addEventListener("click", Deck); 
-}
-
+//#region Deck választás, tábla felállítás
+let turns = 1;
 let player1Picked = false
-function Deck(){
-    if (!player1Picked) {
-        player1.deckType =  this.id.replace("PickBtn","")
-        player1.deck = [...window[this.id.replace("PickBtn", "Deck")]];
+//let decks = document.getElementsByClassName("DeckPickerBtn")
 
-        //console.log(player1.deck)
-        //console.log(GrassDeck)
+const DeckPicker = document.getElementById("DeckPicker")
+for (let i = 0; i < deckTypes.length; i++) {
+    DeckPicker.innerHTML += `<div><img src="./Img/Types/${deckTypes[i].toLowerCase()}.jpg"><h2>${deckTypes[i]}</h2>
+    <button onclick="Valaszt(${i})" class="DeckPickerBtn" id="${deckTypes[i]}PickBtn">Választás</button><br><button class="ViewDeckBtn" id="${deckTypes[i]}ViewBtn">Kártyák megtekintése</button></div>`
 
-        document.getElementById("container").innerHTML=`
-        <h1 id="DeckPickerTitle">2. játékos választ paklit</h1>
-        <div id="DeckPicker">
-            <div><img src="./Img/Types/grass.jpg"><h2>Grass</h2>
-                <button class="DeckPickerBtn" id="GrassPickBtn">Választás</button><br><button class="ViewDeckBtn" id="GrassViewBtn">Kártyák megtekintése</button></div>
-            <div><img src="./Img/Types/lightning.jpg"><h2>Lightning</h2>
-                <button class="DeckPickerBtn" id="LightningPickBtn">Választás</button><br><button class="ViewDeckBtn" id="LightningViewBtn">Kártyák megtekintése</button></div>
-            <div><img src="./Img/Types/water.jpg"><h2>Water</h2>
-                <button class="DeckPickerBtn" id="WaterPickBtn">Választás</button><br><button class="ViewDeckBtn" id="WaterViewBtn">Kártyák megtekintése</button></div>
-            <div><img src="./Img/Types/fire.jpg"><h2>Fire</h2>
-                <button class="DeckPickerBtn" id="FirePickBtn">Választás</button><br><button class="ViewDeckBtn" id="FireViewBtn">Kártyák megtekintése</button></div>
-        </div>`
-        player1Picked = true
-        let decks = document.getElementsByClassName("DeckPickerBtn")
-        for (let i = 0; i < decks.length; i++) {
-        decks[i].addEventListener("click", Deck); }
-    }
-    else{
-        player2.deckType =  this.id.replace("PickBtn","")
-        player2.deck = [...GrassDeck]
-        document.getElementById("container").innerHTML= `<div id="board">
-            <div id="waitingSide">
-            <div class="hand" id="WaitingHand"></div>
-                <div class="benchRow">
-                    <div class="bench" id="WaitingBench1"></div>
-                    <div class="bench" id="WaitingBench2"></div>
-                    <div class="bench" id="WaitingBench3"></div>
-                    <div class="discardPile"></div>
-                </div>
-                <div class="activeRow">
-                    <div class="prizes" id="WaitingSidePrizes"></div>
-                    <div class="activePokemon" id="WaitingSidePokemon"></div>
-                    <div class="energy" id="WaitingSideEnergy"></div>
-                    <div class="deck" id="WaitingSideDeck"></div>
-                </div>
-            </div>
-        <hr>
-            <div id="activeSide">
-                <div class="hand" id="ActiveHand">
-                <button id="EndTurnBtn">Kör vége</button><br></div>
-                <div class="activeRow">
-                    <div class="prizes" id="ActiveSidePrizes"></div>
-                    <div class="activePokemon" id="ActiveSidePokemon"></div>
-                    <div class="energy" id="ActiveSideEnergy"></div>
-                    <div class="deck" id="ActiveSideDeck"></div>
-                </div>
-                <div class="benchRow">
-                    <div class="bench" id="ActiveBench1"></div>
-                    <div class="bench" id="ActiveBench2"></div>
-                    <div class="bench" id="ActiveBench3"></div>
-                    <div class="discardPile"></div>
-                </div>
-            </div>
-            </div>`
-        StartRound()
-    }
+    function Valaszt(index) {
+        if(!player1Picked) {
+            player1Picked = true
+            player1.deckType = deckTypes[index]
+            player1.deck = [...allDecks[index]]
+            document.getElementById("DeckPickerTitle").innerText = "2. játékos választ paklit"
+        } else {
+            player2.deckType = deckTypes[index]
+            player2.deck = [...allDecks[index]]
+            document.getElementById("container").innerHTML = GameBoard()
+            StartRound()
+        }
+    }; 
 }
 
+function GameBoard() {
+    
+    return `<div id="board">
+    <div id="waitingSide">
+    <div class="hand" id="WaitingHand"></div>
+        <div class="benchRow">
+            <div class="bench" id="WaitingBench1"></div>
+            <div class="bench" id="WaitingBench2"></div>
+            <div class="bench" id="WaitingBench3"></div>
+            <div class="discardPile"></div>
+        </div>
+        <div class="activeRow">
+            <div class="prizes" id="WaitingSidePrizes"></div>
+            <div class="activePokemon" id="WaitingSidePokemon"></div>
+            <div class="energy" id="WaitingSideEnergy"></div>
+            <div class="deck" id="WaitingSideDeck" id="WaitingSideDiscardPile"></div>
+        </div>
+    </div>
+<hr>
+    <div id="activeSide">
+        <div class="hand">
+        <button id="EndTurnBtn">Kör vége</button><br>
+            <div id="ActiveHand">
+            </div>
+        </div>
+        <div class="activeRow">
+            <div class="prizes" id="ActiveSidePrizes"></div>
+            <div class="activePokemon" id="ActiveSidePokemon"></div>
+            <div class="energy" id="ActiveSideEnergy"></div>
+            <div class="deck" id="ActiveSideDeck"></div>
+        </div>
+        <div class="benchRow">
+            <div class="bench" id="ActiveBench1"></div>
+            <div class="bench" id="ActiveBench2"></div>
+            <div class="bench" id="ActiveBench3"></div>
+            <div class="discardPile" id="ActiveSideDiscardPile"></div>
+        </div>
+    </div>
+    </div>`
+}
 //#endregion
 
 //#region Kör
-let turns = 1;
 function StartRound(){
 
         if (turns%2 == 1) {
@@ -181,15 +173,16 @@ function StartRound(){
 
 //#region setup
 function Setup(player) {
+    const ActiveHand = document.getElementById("ActiveHand")
     player.activePokemon = player.deck[0]
-    document.getElementById("ActiveHand").innerHTML = '<button id="EndTurnBtn">Kör vége</button><br>'
+    ActiveHand.innerHTML = ''
     document.getElementById("ActiveSidePokemon").style.backgroundImage = `url(./Img/Cards/${player.deckType}/${player.deck[0].name}.jpg)`;
     document.getElementById("ActiveSideEnergy").innerHTML = `<img class="ActivePlacedEnergy PlacedEnergy" src="./Img/Cards/${player.deckType}/Basic${player.deckType}Energy.jpg">`;
     document.getElementById("ActiveSideDeck").style.backgroundImage = `url(./Img/Cardback.jpg)`;
     for (let i = 0; i < 3; i++) {
         let random = Math.floor(Math.random() * player.deck.length);
         player.hand.push(player.deck[random]);
-        document.getElementById("ActiveHand").innerHTML += `<img class="card" id="${player.deck[random].name}" src="./Img/Cards/${player.deckType}/${player.deck[random].name}.jpg">`;
+        ActiveHand.innerHTML += `<img class="card" id="${player.deck[random].name}" src="./Img/Cards/${player.deckType}/${player.deck[random].name}.jpg">`;
         player.deck.splice(random, 1);
     }
 }
@@ -199,74 +192,131 @@ function Turn(actingPlayer, waitingPlayer) {
     //#region Tábla megforditas
 
     //Aktiv jatekos
-    document.getElementById("ActiveHand").innerHTML = '<button id="EndTurnBtn">Kör vége</button><br>'
+    const ActiveHand = document.getElementById("ActiveHand")
+    ActiveHand.innerHTML = ''
     for (let i = 0; i < actingPlayer.hand.length; i++) {
-        document.getElementById("ActiveHand").innerHTML += `<img class="card" id="${actingPlayer.hand[i].name}" src="./Img/Cards/${actingPlayer.deckType}/${actingPlayer.hand[i].name}.jpg">`;  
+        ActiveHand.innerHTML += `<img class="card" id="${actingPlayer.hand[i].name}" src="./Img/Cards/${actingPlayer.deckType}/${actingPlayer.hand[i].name}.jpg">`;  
     }
     for (let i = 0; i <= 2; i++) {
-        if (actingPlayer.bench[i+1] != "") {
-            document.getElementById(`ActiveBench${i+1}`).backgroundImage = `url(./Img/Cards/${actingPlayer.deckType}/${actingPlayer.bench[i].name}.jpg)`;
+        if (actingPlayer.bench[i] != "") {
+            document.getElementById(`ActiveBench${i+1}`).style.backgroundImage = `url(./Img/Cards/${actingPlayer.deckType}/${actingPlayer.bench[i].name}.jpg)`;
+            
         }
         else{
-            document.getElementById(`ActiveBench${i+1}`).backgroundImage = ""; 
+            document.getElementById(`ActiveBench${i+1}`).style.backgroundImage = ""; 
         }
     }
-    document.getElementById("ActiveSideEnergy").innerHTML = ""
+    const ActiveSideEnergy = document.getElementById("ActiveSideEnergy")
+    ActiveSideEnergy.innerHTML = ""
     for (let i = 0; i < actingPlayer.energy; i++) {
-        document.getElementById("ActiveSideEnergy").innerHTML += `<img class="ActivePlacedEnergy PlacedEnergy" src="./Img/Cards/${actingPlayer.deckType}/Basic${actingPlayer.deckType}Energy.jpg">`;
+        ActiveSideEnergy.innerHTML += `<img class="ActivePlacedEnergy PlacedEnergy" src="./Img/Cards/${actingPlayer.deckType}/Basic${actingPlayer.deckType}Energy.jpg">`;
     }
     document.getElementById("ActiveSidePokemon").style.backgroundImage = `url(./Img/Cards/${actingPlayer.deckType}/${actingPlayer.activePokemon.name}.jpg)`;
 
+    let random = Math.floor(Math.random() * actingPlayer.deck.length);
+        actingPlayer.hand.push(actingPlayer.deck[random]);
+        ActiveHand.innerHTML += `<img class="card" id="${actingPlayer.deck[random].name}" src="./Img/Cards/${actingPlayer.deckType}/${actingPlayer.deck[random].name}.jpg">`;
+        actingPlayer.deck.splice(random, 1);
+
     //Várakozó játékos
     document.getElementById("WaitingSideDeck").style.backgroundImage = `url(./Img/Cardback.jpg)`;
+    const WaitingHand = document.getElementById("WaitingHand")
+    WaitingHand.innerHTML = ``;
     for (let i = 0; i < waitingPlayer.hand.length; i++) {
-        document.getElementById("WaitingHand").innerHTML += `<img src="./Img/Cardback.jpg">`;  
+        WaitingHand.innerHTML += `<img src="./Img/Cardback.jpg">`;  
     }
     for (let i = 0; i <= 2; i++) {
         if (waitingPlayer.bench[i] != "") {
-            document.getElementById(`WaitingBench${i+1}`).backgroundImage = `url(./Img/Cards/${waitingPlayer.deckType}/${waitingPlayer.bench[i].name}.jpg)`;
+            document.getElementById(`WaitingBench${i+1}`).style.backgroundImage = `url(./Img/Cards/${waitingPlayer.deckType}/${waitingPlayer.bench[i].name}.jpg)`;
         } 
         else{
-            document.getElementById(`WaitingBench${i+1}`).backgroundImage = ``;
+            document.getElementById(`WaitingBench${i+1}`).style.backgroundImage = ``;
         }
     }
-    document.getElementById("WaitingSideEnergy").innerHTML = ""
+    const WaitingSideEnergy = document.getElementById("WaitingSideEnergy")
+    WaitingSideEnergy.innerHTML = ""
     for (let i = 0; i < waitingPlayer.energy; i++) {
-        document.getElementById("WaitingSideEnergy").innerHTML += `<img class="WaitingPlacedEnergy PlacedEnergy" src="./Img/Cards/${waitingPlayer.deckType}/Basic${waitingPlayer.deckType}Energy.jpg">`;
+        WaitingSideEnergy.innerHTML += `<img class="WaitingPlacedEnergy PlacedEnergy" src="./Img/Cards/${waitingPlayer.deckType}/Basic${waitingPlayer.deckType}Energy.jpg">`;
     }
     document.getElementById("WaitingSidePokemon").style.backgroundImage = `url(./Img/Cards/${waitingPlayer.deckType}/${waitingPlayer.activePokemon.name}.jpg)`;
     //#endregion
+
     let cards = document.getElementsByClassName("card")
         for (let i = 0; i < cards.length; i++) {
         cards[i].addEventListener("click", PlayCard); }
 
     function PlayCard() {
-        switch (GrassDeck.filter(x => x.name === this.id)[0].card_type) {
-            case "BasicPokemon":
-                if (actingPlayer.bench[0] == "") {
-                    actingPlayer.bench[0] = GrassDeck.filter(x => x.name === this.id)[0]
-                    document.getElementById("ActiveBench1").style.backgroundImage = `url(./Img/Cards/${actingPlayer.deckType}/${this.id}.jpg)`;    
-                }
-                else if(actingPlayer.bench[1] == "") {
-                    actingPlayer.bench[1] = GrassDeck.filter(x => x.name === this.id)[0]
-                    document.getElementById("ActiveBench2").style.backgroundImage = `url(./Img/Cards/${actingPlayer.deckType}/${this.id}.jpg)`;
-                    
-                }
-                else if(actingPlayer.bench[2] == "") {
-                    actingPlayer.bench[2] = GrassDeck.filter(x => x.name === this.id)[0]
-                    document.getElementById("ActiveBench3").style.backgroundImage = `url(./Img/Cards/${actingPlayer.deckType}/${this.id}.jpg)`;
-                }
-                else{
-                    alert("Nincs üres bench")
-                }
-
+        let playable = false;
+        switch (actingPlayer.hand.filter(x => x.name === this.id)[0].card_type) {
+            case "energy":
+                actingPlayer.energy++
+                document.getElementById("ActiveSideEnergy").innerHTML += `<img class="ActivePlacedEnergy PlacedEnergy" src="./Img/Cards/${actingPlayer.deckType}/Basic${actingPlayer.deckType}Energy.jpg">`;
+                playable = true
                 break;
-        
+
+            case "BasicPokemon":
+                    let placed = false;
+                    for (let i = 0; i < actingPlayer.bench.length; i++) {
+                        if (actingPlayer.bench[i] === "") {
+                            actingPlayer.bench[i] = actingPlayer.hand.filter(x => x.name === this.id)[0]
+                            actingPlayer.bench[i].place = `Bench${i + 1}`;
+                            document.getElementById(`ActiveBench${i + 1}`).style.backgroundImage = `url(./Img/Cards/${actingPlayer.deckType}/${this.id}.jpg)`;
+                            playable = true;
+                            placed = true;
+                            console.log(actingPlayer.bench);
+                            break;
+                        }
+                    }
+
+                    if (!placed) {
+                        alert("Nincs üres bench");
+                    }
+                    break;
+
+            case "Stage1Pokemon":
+                    if(actingPlayer.bench.filter(x => x.evolution === this.id) || actingPlayer.activePokemon.evolution === this.id){
+                        let BasicPokemons = actingPlayer.bench.filter(x => x.evolution === this.id)
+                        let Stage1 = actingPlayer.hand.filter(x => x.name === this.id)[0]
+                        console.log(BasicPokemons);
+                        for (let i = 0; i < BasicPokemons.length; i++) {
+                            const basicCard = document.getElementById(`Active${BasicPokemons[i].place}`)
+                            basicCard.addEventListener("click", function(event) {
+                                Evolve(Stage1, event.target, BasicPokemons[i].place)
+                            }); 
+                        }
+                        
+                    }
+                break;
             default:
                 break;
+
+                
+                
+            
         }
-        console.log(player1.bench)
-        console.log(player2.bench)
+        if (playable){
+            actingPlayer.hand.splice(actingPlayer.hand.indexOf(actingPlayer.hand.filter(x => x.name === this.id)[0]),1)
+            ActiveHand.innerHTML = ''
+
+            for (let i = 0; i < actingPlayer.hand.length; i++) {
+                ActiveHand.innerHTML += `<img class="card" id="${actingPlayer.hand[i].name}" src="./Img/Cards/${actingPlayer.deckType}/${actingPlayer.hand[i].name}.jpg">`;  
+            }
+
+            let cards = document.getElementsByClassName("card")
+
+            for (let i = 0; i < cards.length; i++) {
+                cards[i].addEventListener("click", PlayCard);
+            }
+        }
+        
+    }
+    
+    function Evolve(Stage1, basicCard, place) {
+        basicCard.style.backgroundImage=`url(./Img/Cards/${actingPlayer.deckType}/${Stage1.name}.jpg)`
+        actingPlayer.bench[place-1] = Stage1
+        console.log(actingPlayer.bench[place-1]);
+        playable = true;
+
     }
 }
 
