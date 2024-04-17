@@ -46,7 +46,48 @@ const LightningEnergy = {card_type:"energy", type:"lightning", name:"BasicLightn
 var LightningDeck = [Pikachu, Raichu, {...Raichu}, Magnemite, {...Magnemite}, Magneton, Voltorb, {...Voltorb}, Electrode, Electabuzz, LightningEnergy, LightningEnergy, LightningEnergy, potion, switchActive]
 //#endregion
 
-const allDecks = [GrassDeck, LightningDeck, [], []]
+//#region Fire deck
+const Charmander = {card_type:"BasicPokemon", name:"Charmander", hp:70, skill1_name:"Scratch", skill1_dmg:"10", skill1_cost:"1",  skill2_name:"Ember", skill2_dmg:"30", skill2_cost:"2", evolution:"Charmeleon", special_skill: false, place:"", dmgCoins:[]};
+
+const Charmeleon = {card_type:"Stage1Pokemon", name:"Charmeleon", hp:100, skill1_name:"Ember", skill1_dmg:"1", skill1_cost:"30", skill2_name:"Flamethrower", skill2_dmg:"60", skill2_cost:"3" ,special_skill: false, place:"", dmgCoins:[]};
+
+const Vulpix = {card_type:"BasicPokemon", name:"Vulpix", hp:60, skill1_name:"Will-O-Wisp", skill1_dmg:"20", skill1_cost:"1", evolution:"Ninetales",special_skill: false, place:"", dmgCoins:[]};
+
+const Ninetales = {card_type:"Stage1Pokemon", name:"Ninetales", hp:100, skill1_name:"Flame Tail", skill1_dmg:"70", skill1_cost:"2",special_skill: false, place:"", dmgCoins:[]};
+
+const Growlithe = {card_type:"BasicPokemon", name:"Growlithe", hp:80, skill1_name:"Gnaw", skill1_dmg:"30", skill1_cost:"2", skill2_name:"Take Down", skill2_dmg:"50", skill2_cost:"3", evolution:"Arcanine",special_skill: false, place:"", dmgCoins:[]};
+const Arcanine = {card_type:"Stage1Pokemon", name:"Arcanine", hp:140, skill1_name:"Flare Blitz", skill1_dmg:"90", skill1_cost:"3", special_skill: true, place:"", dmgCoins:[]};
+
+const Magmar = {card_type:"BasicPokemon", name:"Magmar", hp:90, skill1_name:"Flare", skill1_dmg:"20", skill1_cost:"1",  skill2_name:"Magma Punch", skill2_dmg:"50", skill2_cost:"2", special_skill: false, place:"", dmgCoins:[]};
+
+const FireEnergy = {card_type:"energy", type:"fire", name:"BasicFireEnergy"}
+
+var FireDeck = [Charmander, Charmeleon, {...Charmeleon}, Vulpix, {...Vulpix}, Ninetales, Growlithe, {...Growlithe}, Arcanine, Magmar, FireEnergy, FireEnergy, FireEnergy, potion, switchActive]
+
+
+//#endregion
+
+//#region Water deck
+const Squirtle = {card_type:"BasicPokemon", name:"Squirtle", hp:70, skill1_name:"Tackle", skill1_dmg:"10", skill1_cost:"1",  skill2_name:"Water Gun", skill2_dmg:"30", skill2_cost:"2", evolution:"Wartortle", special_skill: false, place:"", dmgCoins:[]};
+
+const Wartortle = {card_type:"Stage1Pokemon", name:"Wartortle", hp:100, skill1_name:"Water Gun", skill1_dmg:"30", skill1_cost:"1", skill2_name:"Skull Bash", skill2_dmg:"60", skill2_cost:"3" ,special_skill: false, place:"", dmgCoins:[]};
+
+const Poliwag = {card_type:"BasicPokemon", name:"Poliwag", hp:60, skill1_name:"Pound", skill1_dmg:"20", skill1_cost:"1", evolution:"Poliwhirl",special_skill: false, place:"", dmgCoins:[]};
+
+const Poliwhirl = {card_type:"Stage1Pokemon", name:"Poliwhirl", hp:90, skill1_name:"Wave Splash", skill1_dmg:"50", skill1_cost:"1", special_skill: false, place:"", dmgCoins:[]};
+
+const Magikarp = {card_type:"BasicPokemon", name:"Magikarp", hp:30, skill1_name:"Splash", skill1_dmg:"10", skill1_cost:"1", evolution:"Gyarados",special_skill: false, place:"", dmgCoins:[]};
+
+const Gyarados = {card_type:"Stage1Pokemon", name:"Gyarados", hp:160, skill1_name:"Tail Smash", skill1_dmg:"90", skill1_cost:"3", skill2_name:"Hyper Beam", skill2_dmg:"120", skill2_cost:"4" ,special_skill: true, place:"", dmgCoins:[]};
+
+const Lapras = {card_type:"BasicPokemon", name:"Lapras", hp:110, skill1_name:"Surf", skill1_dmg:"50", skill1_cost:"2", special_skill: false, place:"", dmgCoins:[]};
+
+const WaterEnergy = {card_type:"energy", type:"water", name:"BasicWaterEnergy"}
+
+var WaterDeck = [Squirtle, Wartortle,{...Wartortle}, Poliwag, {...Poliwag}, Poliwhirl, Magikarp, {...Magikarp}, Gyarados, Lapras, WaterEnergy, WaterEnergy, WaterEnergy, potion, switchActive]
+//#endregion
+
+const allDecks = [GrassDeck, LightningDeck, FireDeck, WaterDeck]
 const deckTypes = ["Grass", "Lightning", "Fire", "Water"]
 //#endregion
 
@@ -320,7 +361,7 @@ function Turn(actingPlayer, waitingPlayer) {
     }
 }
 
-// // Easter Egg
+// // Easter Egg 
 // setInterval(() => {
 //     console.log(GrassDeck[0].name.toUpperCase());
 //     let BULBASAUR = new Audio("Img/bulbasaur.mp3");
