@@ -44,6 +44,8 @@ body{
     height: 50%;
 }
 
+
+
 .bench, .discardPile, .activePokemon, .prizes, .energy, .deck{
     border: 2px black solid;
     height: 90%;
@@ -52,6 +54,9 @@ body{
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
+    opacity: 1;
+    transition: 0.5s;
+    box-shadow: none;
     & img{
         height: 100%;
         border-radius: 5%;

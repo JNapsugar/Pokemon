@@ -301,7 +301,13 @@ function Turn(actingPlayer, waitingPlayer) {
                         if (actingPlayer.bench[i] === "") {
                             actingPlayer.bench[i] = actingPlayer.hand.filter(x => x.name === this.id)[0]
                             actingPlayer.bench[i].place = `Bench${i + 1}`;
-                            document.getElementById(`ActiveBench${i + 1}`).style.backgroundImage = `url(./Img/Cards/${actingPlayer.deckType}/${this.id}.jpg)`;
+                            document.getElementById(`ActiveBench${i + 1}`).style.opacity = 0  
+                            setTimeout(() => { 
+                                document.getElementById(`ActiveBench${i + 1}`).style.backgroundImage = `url(./Img/Cards/${actingPlayer.deckType}/${this.id}.jpg)`;
+                                document.getElementById(`ActiveBench${i + 1}`).style.opacity = 1 
+                            }, 300);
+                            
+                            
                             playable = true;
                             placed = true;
                             console.log(actingPlayer.bench);
@@ -318,11 +324,11 @@ function Turn(actingPlayer, waitingPlayer) {
                     if(actingPlayer.bench.filter(x => x.evolution === this.id) || actingPlayer.activePokemon.evolution === this.id){
                         let BasicPokemons = actingPlayer.bench.filter(x => x.evolution === this.id)
                         let Stage1 = actingPlayer.hand.filter(x => x.name === this.id)[0]
-                        console.log(BasicPokemons);
                         for (let i = 0; i < BasicPokemons.length; i++) {
                             const basicCard = document.getElementById(`Active${BasicPokemons[i].place}`)
+                            basicCard.style.boxShadow = "0 0 25px 10px white"
                             basicCard.addEventListener("click", function(event) {
-                                Evolve(Stage1, event.target, BasicPokemons[i].place)
+                                Evolve(Stage1, event.target, BasicPokemons[i].place, BasicPokemons)
                             }); 
                         }
                         
@@ -352,12 +358,18 @@ function Turn(actingPlayer, waitingPlayer) {
         
     }
     
-    function Evolve(Stage1, basicCard, place) {
-        basicCard.innerHTML=`<img class="card animated" src="./Img/Cards/${actingPlayer.deckType}/${Stage1.name}.jpg">`
-        actingPlayer.bench[place-1] = Stage1
-        console.log(actingPlayer.bench[place-1]);
+    function Evolve(Stage1, basicCard, place, BasicPokemons) {
+        basicCard.style.opacity = 0
+        basicCard.style.backgroundImage=`url(./Img/Cards/${actingPlayer.deckType}/${Stage1.name}.jpg)`
+        actingPlayer.bench[Number(place.replace("Bench",""))-1] = Stage1
+        actingPlayer.bench[Number(place.replace("Bench",""))-1].place = place
+        console.log(actingPlayer.bench);
         playable = true;
-
+        basicCard.style.opacity = 1
+        for (let i = 0; i < BasicPokemons.length; i++) {
+            const basicCard = document.getElementById(`Active${BasicPokemons[i].place}`)
+            basicCard.style.boxShadow = "none"
+        }
     }
 }
 
