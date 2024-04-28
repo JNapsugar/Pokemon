@@ -1,0 +1,144 @@
+body{
+    margin: 0;
+    height: 100vh;
+}
+#board{
+    height: 100vh;
+    padding: 0, 3rem;
+}
+#waitingSide{
+    height: 50%;
+    background-color: lightcoral;
+}
+#activeSide{
+    height: 50%;
+    background-color: lightskyblue;
+}
+
+.hand{
+    height: 100%;
+    width: 25%;
+    border-right: 2px black solid;
+    float: left;
+    margin-right: 5rem;
+    overflow-y: scroll;
+    text-align: center;
+    & img{
+        width: 70%;
+        margin: 1rem;
+        border-radius: 5%;
+    }
+}
+
+
+.activeRow{
+    display: flex;
+    flex-wrap: nowrap;
+    align-content: space-evenly;
+    height: 50%;
+}
+.benchRow{
+    display: flex;
+    flex-wrap: nowrap;
+    align-content: space-evenly;
+    height: 50%;
+}
+
+
+
+.bench, .discardPile, .activePokemon, .prizes, .energy, .deck{
+    border: 2px black solid;
+    height: 90%;
+    width: 10rem;
+    margin: 0.5rem 3rem;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 1;
+    transition: 0.5s;
+    box-shadow: none;
+    & img{
+        height: 100%;
+        border-radius: 5%;
+    }
+}
+
+.discardPile, .deck{
+    margin-left: auto;
+}
+
+
+.prizes, .energy{
+    border: 2px lightgrey dotted;
+    text-align: center;
+}
+
+hr{
+    background-color: black;
+    margin: 0;
+    height:5px
+}
+
+
+#DeckPicker{
+    display: flex;
+    flex-wrap:nowrap;
+    justify-content: space-evenly;
+    text-align: center;
+    & div{
+        border: 3px black solid;
+        & img{
+            height: 25rem;
+        }
+        & button{
+            height: 2rem;
+            margin-bottom: 1rem;
+        }
+    }
+}
+
+#DeckPickerTitle{
+    text-align: center;
+    padding: 5rem;
+}
+
+.PlacedEnergy, .PlacedEnergy:nth-child(2), .PlacedEnergy:nth-child(3), .PlacedEnergy:nth-child(4){
+
+    position: relative;
+    display: block;
+    margin: auto;
+}
+
+.PlacedEnergy{
+    margin-top: 0.2rem;
+    rotate: 90deg;
+    height: 50% !important;
+    top: -8%;
+}
+.PlacedEnergy:nth-child(2) {
+    top: -40%;
+}
+  .PlacedEnergy:nth-child(3) {
+    top: -70%;
+}
+.PlacedEnergy:nth-child(4) {
+    top: -100%;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.card {
+    animation: fadeIn 0.3s ease-out;
+}
+
+.bench {
+    animation: slideIn 0.5s ease-out;
+}
