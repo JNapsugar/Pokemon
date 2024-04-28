@@ -1,22 +1,21 @@
 //#region Cards
-//sorry, de nem látom át ezért kicsit tagolom, ha baj majd kitöröljük
 const potion = {card_type:"potion", name:"Potion"}
 const switchActive = {card_type:"switch", name:"Switch"}
 
 //#region Grass deck
-const Bulbasaur = {card_type:"BasicPokemon", name:"Bulbasaur", hp:70, skill1_name:"Tackle", skill1_dmg:"10", skill1_cost:"1", skill2_name:"Vine Whip", skill2_dmg:"30", skill2_cost:"2", evolution:"Ivysaur", special_skill: false, place:"", dmgCoins:[]};
+const Bulbasaur = {card_type:"BasicPokemon", name:"Bulbasaur", starting_hp:70, hp:70, skill1_name:"Tackle", skill1_dmg:"10", skill1_cost:"1", skill2_name:"Vine Whip", skill2_dmg:"30", skill2_cost:"2", evolution:"Ivysaur", special_skill: false, place:"", dmgCoins:[]};
 
-const Ivysaur = {card_type:"Stage1Pokemon", name:"Ivysaur", hp:100, skill1_name:"Vine Whip", skill1_dmg:"30", skill1_cost:"3", skill2_name:"Razor Leaf", skill2_dmg:"60", skill2_cost:"3", special_skill: false, place:"", dmgCoins:[]};
+const Ivysaur = {card_type:"Stage1Pokemon", name:"Ivysaur", starting_hp:100, hp:100, skill1_name:"Vine Whip", skill1_dmg:"30", skill1_cost:"1", skill2_name:"Razor Leaf", skill2_dmg:"60", skill2_cost:"3", special_skill: false, place:"", dmgCoins:[]};
 
-const Oddish = {card_type:"BasicPokemon", name:"Oddish", hp:50, skill1_name:"Absorb", skill1_dmg:"10", skill1_cost:"1", special_skill: true ,evolution:"Gloom", special_skill: false, place:"", dmgCoins:[]};
+const Oddish = {card_type:"BasicPokemon", name:"Oddish", starting_hp:50, hp:50, skill1_name:"Absorb", skill1_dmg:"10", skill1_cost:"1", special_skill: true ,evolution:"Gloom", special_skill: false, place:"", dmgCoins:[]};
 
-const Gloom = {card_type:"Stage1Pokemon", name:"Gloom", hp:90, skill1_name:"Mega Drain", skill1_dmg:"60", skill1_cost:"2", special_skill: true, special_skill: false, place:"", dmgCoins:[]};
+const Gloom = {card_type:"Stage1Pokemon", name:"Gloom", starting_hp:90, hp:90, skill1_name:"Mega Drain", skill1_dmg:"60", skill1_cost:"2", special_skill: true, special_skill: false, place:"", dmgCoins:[]};
 
-const Exeggcute = {card_type:"BasicPokemon", name:"Exeggcute", hp:60, skill1_name:"Rollout", skill1_dmg:"40", skill1_cost:"2", evolution:"Exeggutor", special_skill: false, place:"", dmgCoins:[]};
+const Exeggcute = {card_type:"BasicPokemon", name:"Exeggcute", starting_hp:60, hp:60, skill1_name:"Rollout", skill1_dmg:"40", skill1_cost:"2", evolution:"Exeggutor", special_skill: false, place:"", dmgCoins:[]};
 
-const Exeggutor = {card_type:"Stage1Pokemon", name:"Exeggutor", hp:120, skill1_name:"Seed Bomb", skill1_dmg:"40", skill1_cost:"2", skill2_name:"Barrage Impact", skill2_dmg:"80", skill2_cost:"3", special_skill: false, place:"", dmgCoins:[]};
+const Exeggutor = {card_type:"Stage1Pokemon", name:"Exeggutor", starting_hp:120, hp:120, skill1_name:"Seed Bomb", skill1_dmg:"40", skill1_cost:"2", skill2_name:"Barrage Impact", skill2_dmg:"80", skill2_cost:"3", special_skill: false, place:"", dmgCoins:[]};
 
-const Scyther = {card_type:"BasicPokemon", name:"Scyther", hp:80, skill1_name:"X-Scissor", skill1_dmg:"20", skill1_cost:"1", special_skill: true, place:"", dmgCoins:[]};
+const Scyther = {card_type:"BasicPokemon", name:"Scyther", starting_hp:80, hp:80, skill1_name:"X-Scissor", skill1_dmg:"20", skill1_cost:"1", special_skill: true, place:"", dmgCoins:[]};
 
 const GrassEnergy = {card_type:"energy", type:"grass", name:"BasicGrassEnergy"}
 
@@ -26,20 +25,20 @@ var GrassDeck = [Bulbasaur, Ivysaur, {...Ivysaur}, Oddish, {...Oddish}, Gloom, E
 
 
 //#region Lightning deck
-const Pikachu = {card_type:"BasicPokemon", name:"Pikachu", hp:70, skill1_name:"Quick Attack", skill1_dmg:"10", skill1_cost:"1", skill2_name:"Electro Ball", skill2_dmg:"30", skill2_cost:"2", evolution:"Raichu", special_skill: false, place:"", dmgCoins:[]};
+const Pikachu = {card_type:"BasicPokemon", name:"Pikachu", starting_hp:70, hp:70, skill1_name:"Quick Attack", skill1_dmg:"10", skill1_cost:"1", skill2_name:"Electro Ball", skill2_dmg:"30", skill2_cost:"2", evolution:"Raichu", special_skill: false, place:"", dmgCoins:[]};
 
-const Raichu = {card_type:"Stage1Pokemon", name:"Raichu", hp:100, skill1_name:"Electro Ball", skill1_dmg:"30", skill1_cost:"1", skill2_name:"Thunder", skill2_dmg:"60", skill2_cost:"3", special_skill: false, place:"", dmgCoins:[]};
+const Raichu = {card_type:"Stage1Pokemon", name:"Raichu", starting_hp:100, hp:100, skill1_name:"Electro Ball", skill1_dmg:"30", skill1_cost:"1", skill2_name:"Thunder", skill2_dmg:"60", skill2_cost:"3", special_skill: false, place:"", dmgCoins:[]};
 
-const Magnemite = {card_type:"BasicPokemon", name:"Magnemite", hp:60, skill1_name:"Thunder Shock", skill1_dmg:"20", skill1_cost:"1", evolution:"Magneton", special_skill: false, place:"", dmgCoins:[]};
+const Magnemite = {card_type:"BasicPokemon", name:"Magnemite", starting_hp:60, hp:60, skill1_name:"Thunder Shock", skill1_dmg:"20", skill1_cost:"1", evolution:"Magneton", special_skill: false, place:"", dmgCoins:[]};
 
-const Magneton = {card_type:"Stage1Pokemon", name:"Magneton", hp:110, skill1_name:"Thunder Shock", skill1_dmg:"20", skill1_cost:"1", skill2_name:"Magnetic Circle" ,skill2_dmg:"20", skill2_cost:"2", special_skill: true, place:"", dmgCoins:[]};
+const Magneton = {card_type:"Stage1Pokemon", name:"Magneton", starting_hp:110, hp:110, skill1_name:"Thunder Shock", skill1_dmg:"20", skill1_cost:"1", skill2_name:"Magnetic Circle" ,skill2_dmg:"20", skill2_cost:"2", special_skill: true, place:"", dmgCoins:[]};
 
 
-const Voltorb = {card_type:"BasicPokemon", name:"Voltorb", hp:50, skill1_name:"Rollout", skill1_dmg:"10", skill1_cost:"1", skill2_name:"Spark", skill2_dmg:"30", skill1_cost:"2" ,evolution:"Electrode", special_skill: false, place:"", dmgCoins:[]};
+const Voltorb = {card_type:"BasicPokemon", name:"Voltorb", starting_hp:50, hp:50, skill1_name:"Rollout", skill1_dmg:"10", skill1_cost:"1", skill2_name:"Spark", skill2_dmg:"30", skill1_cost:"2" ,evolution:"Electrode", special_skill: false, place:"", dmgCoins:[]};
 
-const Electrode = {card_type:"Stage1Pokemon", name:"Electrode", hp:80, skill1_name:"Speed Attack", skill1_dmg:"40", skill1_cost:"1", skill2_name:"Single Shot Blast", skill2_dmg:"120", skill2_cost:"3", special_skill: true, place:"", dmgCoins:[]};
+const Electrode = {card_type:"Stage1Pokemon", name:"Electrode", starting_hp:80, hp:80, skill1_name:"Speed Attack", skill1_dmg:"40", skill1_cost:"1", skill2_name:"Single Shot Blast", skill2_dmg:"120", skill2_cost:"3", special_skill: true, place:"", dmgCoins:[]};
 
-const Electabuzz = {card_type:"BasicPokemon", name:"Electabuzz", hp:90, skill1_name:"Low Kick", skill1_dmg:"20", skill1_cost:"1",  skill2_name:"Electro Punch", skill2_dmg:"50", skill2_cost:"2", special_skill: false, place:"", dmgCoins:[]};
+const Electabuzz = {card_type:"BasicPokemon", name:"Electabuzz", starting_hp:90, hp:90, skill1_name:"Low Kick", skill1_dmg:"20", skill1_cost:"1",  skill2_name:"Electro Punch", skill2_dmg:"50", skill2_cost:"2", special_skill: false, place:"", dmgCoins:[]};
 
 const LightningEnergy = {card_type:"energy", type:"lightning", name:"BasicLightningEnergy"}
 
@@ -47,18 +46,18 @@ var LightningDeck = [Pikachu, Raichu, {...Raichu}, Magnemite, {...Magnemite}, Ma
 //#endregion
 
 //#region Fire deck
-const Charmander = {card_type:"BasicPokemon", name:"Charmander", hp:70, skill1_name:"Scratch", skill1_dmg:"10", skill1_cost:"1",  skill2_name:"Ember", skill2_dmg:"30", skill2_cost:"2", evolution:"Charmeleon", special_skill: false, place:"", dmgCoins:[]};
+const Charmander = {card_type:"BasicPokemon", name:"Charmander", starting_hp:70, hp:70, skill1_name:"Scratch", skill1_dmg:"10", skill1_cost:"1",  skill2_name:"Ember", skill2_dmg:"30", skill2_cost:"2", evolution:"Charmeleon", special_skill: false, place:"", dmgCoins:[]};
 
-const Charmeleon = {card_type:"Stage1Pokemon", name:"Charmeleon", hp:100, skill1_name:"Ember", skill1_dmg:"1", skill1_cost:"30", skill2_name:"Flamethrower", skill2_dmg:"60", skill2_cost:"3" ,special_skill: false, place:"", dmgCoins:[]};
+const Charmeleon = {card_type:"Stage1Pokemon", name:"Charmeleon", starting_hp:100, hp:100, skill1_name:"Ember", skill1_dmg:"1", skill1_cost:"30", skill2_name:"Flamethrower", skill2_dmg:"60", skill2_cost:"3" ,special_skill: false, place:"", dmgCoins:[]};
 
-const Vulpix = {card_type:"BasicPokemon", name:"Vulpix", hp:60, skill1_name:"Will-O-Wisp", skill1_dmg:"20", skill1_cost:"1", evolution:"Ninetales",special_skill: false, place:"", dmgCoins:[]};
+const Vulpix = {card_type:"BasicPokemon", name:"Vulpix", starting_hp:60, hp:60, skill1_name:"Will-O-Wisp", skill1_dmg:"20", skill1_cost:"1", evolution:"Ninetales",special_skill: false, place:"", dmgCoins:[]};
 
-const Ninetales = {card_type:"Stage1Pokemon", name:"Ninetales", hp:100, skill1_name:"Flame Tail", skill1_dmg:"70", skill1_cost:"2",special_skill: false, place:"", dmgCoins:[]};
+const Ninetales = {card_type:"Stage1Pokemon", name:"Ninetales", starting_hp:100, hp:100, skill1_name:"Flame Tail", skill1_dmg:"70", skill1_cost:"2",special_skill: false, place:"", dmgCoins:[]};
 
-const Growlithe = {card_type:"BasicPokemon", name:"Growlithe", hp:80, skill1_name:"Gnaw", skill1_dmg:"30", skill1_cost:"2", skill2_name:"Take Down", skill2_dmg:"50", skill2_cost:"3", evolution:"Arcanine",special_skill: false, place:"", dmgCoins:[]};
-const Arcanine = {card_type:"Stage1Pokemon", name:"Arcanine", hp:140, skill1_name:"Flare Blitz", skill1_dmg:"90", skill1_cost:"3", special_skill: true, place:"", dmgCoins:[]};
+const Growlithe = {card_type:"BasicPokemon", name:"Growlithe", starting_hp:80, hp:80, skill1_name:"Gnaw", skill1_dmg:"30", skill1_cost:"2", skill2_name:"Take Down", skill2_dmg:"50", skill2_cost:"3", evolution:"Arcanine",special_skill: false, place:"", dmgCoins:[]};
+const Arcanine = {card_type:"Stage1Pokemon", name:"Arcanine", starting_hp:140, hp:140, skill1_name:"Flare Blitz", skill1_dmg:"90", skill1_cost:"3", special_skill: true, place:"", dmgCoins:[]};
 
-const Magmar = {card_type:"BasicPokemon", name:"Magmar", hp:90, skill1_name:"Flare", skill1_dmg:"20", skill1_cost:"1",  skill2_name:"Magma Punch", skill2_dmg:"50", skill2_cost:"2", special_skill: false, place:"", dmgCoins:[]};
+const Magmar = {card_type:"BasicPokemon", name:"Magmar", starting_hp:90, hp:90, skill1_name:"Flare", skill1_dmg:"20", skill1_cost:"1",  skill2_name:"Magma Punch", skill2_dmg:"50", skill2_cost:"2", special_skill: false, place:"", dmgCoins:[]};
 
 const FireEnergy = {card_type:"energy", type:"fire", name:"BasicFireEnergy"}
 
@@ -68,19 +67,19 @@ var FireDeck = [Charmander, Charmeleon, {...Charmeleon}, Vulpix, {...Vulpix}, Ni
 //#endregion
 
 //#region Water deck
-const Squirtle = {card_type:"BasicPokemon", name:"Squirtle", hp:70, skill1_name:"Tackle", skill1_dmg:"10", skill1_cost:"1",  skill2_name:"Water Gun", skill2_dmg:"30", skill2_cost:"2", evolution:"Wartortle", special_skill: false, place:"", dmgCoins:[]};
+const Squirtle = {card_type:"BasicPokemon", name:"Squirtle", starting_hp:70, hp:70, skill1_name:"Tackle", skill1_dmg:"10", skill1_cost:"1",  skill2_name:"Water Gun", skill2_dmg:"30", skill2_cost:"2", evolution:"Wartortle", special_skill: false, place:"", dmgCoins:[]};
 
-const Wartortle = {card_type:"Stage1Pokemon", name:"Wartortle", hp:100, skill1_name:"Water Gun", skill1_dmg:"30", skill1_cost:"1", skill2_name:"Skull Bash", skill2_dmg:"60", skill2_cost:"3" ,special_skill: false, place:"", dmgCoins:[]};
+const Wartortle = {card_type:"Stage1Pokemon", name:"Wartortle", starting_hp:100, hp:100, skill1_name:"Water Gun", skill1_dmg:"30", skill1_cost:"1", skill2_name:"Skull Bash", skill2_dmg:"60", skill2_cost:"3" ,special_skill: false, place:"", dmgCoins:[]};
 
-const Poliwag = {card_type:"BasicPokemon", name:"Poliwag", hp:60, skill1_name:"Pound", skill1_dmg:"20", skill1_cost:"1", evolution:"Poliwhirl",special_skill: false, place:"", dmgCoins:[]};
+const Poliwag = {card_type:"BasicPokemon", name:"Poliwag", starting_hp:60, hp:60,  skill1_name:"Pound", skill1_dmg:"20", skill1_cost:"1", evolution:"Poliwhirl",special_skill: false, place:"", dmgCoins:[]};
 
-const Poliwhirl = {card_type:"Stage1Pokemon", name:"Poliwhirl", hp:90, skill1_name:"Wave Splash", skill1_dmg:"50", skill1_cost:"1", special_skill: false, place:"", dmgCoins:[]};
+const Poliwhirl = {card_type:"Stage1Pokemon", name:"Poliwhirl", starting_hp:90, hp:90, skill1_name:"Wave Splash", skill1_dmg:"50", skill1_cost:"1", special_skill: false, place:"", dmgCoins:[]};
 
-const Magikarp = {card_type:"BasicPokemon", name:"Magikarp", hp:30, skill1_name:"Splash", skill1_dmg:"10", skill1_cost:"1", evolution:"Gyarados",special_skill: false, place:"", dmgCoins:[]};
+const Magikarp = {card_type:"BasicPokemon", name:"Magikarp", starting_hp:30, hp:30, skill1_name:"Splash", skill1_dmg:"10", skill1_cost:"1", evolution:"Gyarados",special_skill: false, place:"", dmgCoins:[]};
 
-const Gyarados = {card_type:"Stage1Pokemon", name:"Gyarados", hp:160, skill1_name:"Tail Smash", skill1_dmg:"90", skill1_cost:"3", skill2_name:"Hyper Beam", skill2_dmg:"120", skill2_cost:"4" ,special_skill: true, place:"", dmgCoins:[]};
+const Gyarados = {card_type:"Stage1Pokemon", name:"Gyarados", starting_hp:160, hp:160, skill1_name:"Tail Smash", skill1_dmg:"90", skill1_cost:"3", skill2_name:"Hyper Beam", skill2_dmg:"120", skill2_cost:"4" ,special_skill: true, place:"", dmgCoins:[]};
 
-const Lapras = {card_type:"BasicPokemon", name:"Lapras", hp:110, skill1_name:"Surf", skill1_dmg:"50", skill1_cost:"2", special_skill: false, place:"", dmgCoins:[]};
+const Lapras = {card_type:"BasicPokemon", name:"Lapras", starting_hp:110, hp:110, skill1_name:"Surf", skill1_dmg:"50", skill1_cost:"2", special_skill: false, place:"", dmgCoins:[]};
 
 const WaterEnergy = {card_type:"energy", type:"water", name:"BasicWaterEnergy"}
 
@@ -153,7 +152,11 @@ function GameBoard() {
         </div>
         <div class="activeRow">
             <div class="prizes" id="WaitingSidePrizes"></div>
-            <div class="activePokemon" id="WaitingSidePokemon"></div>
+            <div class="activePokemon" id="WaitingSidePokemon">
+                <div class="skills">
+                    <p id="WaitingHP">HP : </p>
+                </div>
+            </div>
             <div class="energy" id="WaitingSideEnergy"></div>
             <div class="deck" id="WaitingSideDeck" id="WaitingSideDiscardPile"></div>
         </div>
@@ -161,13 +164,24 @@ function GameBoard() {
 <hr>
     <div id="activeSide">
         <div class="hand">
-        <button id="EndTurnBtn">Kör vége</button><br>
+            <div id="Tutorial">
+                <h3 id="PhaseText">Laposztás</h3>
+                <p id="TutorialText">A játékosok 3 lapot kapnak, elhelyezik kezdő pokemonjukat és 1 energyt</p>
+                <button id="EndTurnBtn">Kör vége</button><br>
+            </div>
             <div id="ActiveHand">
             </div>
         </div>
         <div class="activeRow">
             <div class="prizes" id="ActiveSidePrizes"></div>
-            <div class="activePokemon" id="ActiveSidePokemon"></div>
+            <div class="activePokemon" id="ActiveSidePokemon">
+                <div class="skills">
+                    <div id="skill1"></div>
+                    <div id="skill2"></div>
+                    <p id="ActiveHP">HP : </p>
+                </div>
+                
+            </div>
             <div class="energy" id="ActiveSideEnergy"></div>
             <div class="deck" id="ActiveSideDeck"></div>
         </div>
@@ -193,6 +207,7 @@ function StartRound(){
                Setup(player1);
             }
             else{
+                document.getElementById("PhaseText").innerText="1. játékos köre"
                 Turn(player1,player2)
             }
             
@@ -204,6 +219,7 @@ function StartRound(){
                 Setup(player2);
             }
             else{
+                document.getElementById("PhaseText").innerText="2. játékos köre"
                 Turn(player2,player1)
             }
         }
@@ -253,11 +269,15 @@ function Turn(actingPlayer, waitingPlayer) {
         ActiveSideEnergy.innerHTML += `<img class="ActivePlacedEnergy PlacedEnergy" src="./Img/Cards/${actingPlayer.deckType}/Basic${actingPlayer.deckType}Energy.jpg">`;
     }
     document.getElementById("ActiveSidePokemon").style.backgroundImage = `url(./Img/Cards/${actingPlayer.deckType}/${actingPlayer.activePokemon.name}.jpg)`;
+    document.getElementById("ActiveHP").innerText = "HP : " + actingPlayer.activePokemon.hp;
+    Skills(false)
 
     let random = Math.floor(Math.random() * actingPlayer.deck.length);
         actingPlayer.hand.push(actingPlayer.deck[random]);
         ActiveHand.innerHTML += `<img class="card" id="${actingPlayer.deck[random].name}" src="./Img/Cards/${actingPlayer.deckType}/${actingPlayer.deck[random].name}.jpg">`;
         actingPlayer.deck.splice(random, 1);
+
+       
 
     //Várakozó játékos
     document.getElementById("WaitingSideDeck").style.backgroundImage = `url(./Img/Cardback.jpg)`;
@@ -280,8 +300,13 @@ function Turn(actingPlayer, waitingPlayer) {
         WaitingSideEnergy.innerHTML += `<img class="WaitingPlacedEnergy PlacedEnergy" src="./Img/Cards/${waitingPlayer.deckType}/Basic${waitingPlayer.deckType}Energy.jpg">`;
     }
     document.getElementById("WaitingSidePokemon").style.backgroundImage = `url(./Img/Cards/${waitingPlayer.deckType}/${waitingPlayer.activePokemon.name}.jpg)`;
+    document.getElementById("WaitingHP").innerText = "HP : " + waitingPlayer.activePokemon.hp;
+
+    document.getElementById("TutorialText").innerText=""
     //#endregion
 
+    //#region Kártya kijátszás
+    let skillUsed = false;
     let cards = document.getElementsByClassName("card")
         for (let i = 0; i < cards.length; i++) {
         cards[i].addEventListener("click", PlayCard); }
@@ -292,9 +317,20 @@ function Turn(actingPlayer, waitingPlayer) {
             case "energy":
                 actingPlayer.energy++
                 document.getElementById("ActiveSideEnergy").innerHTML += `<img class="ActivePlacedEnergy PlacedEnergy" src="./Img/Cards/${actingPlayer.deckType}/Basic${actingPlayer.deckType}Energy.jpg">`;
+                Skills(skillUsed)
                 playable = true
                 break;
-
+            case "potion":
+                if (actingPlayer.activePokemon.hp < actingPlayer.activePokemon.starting_hp) {
+                    actingPlayer.activePokemon.hp = actingPlayer.activePokemon.hp + 30 > actingPlayer.activePokemon.starting_hp? actingPlayer.activePokemon.starting_hp : actingPlayer.activePokemon.hp + 30
+                    document.getElementById("ActiveHP").innerHTML = "HP : " +  actingPlayer.activePokemon.hp
+                    playable = true
+                }
+                break;
+            case "switch":
+                SelectSwitchPokemon()
+                playable = true
+                break;
             case "BasicPokemon":
                     let placed = false;
                     for (let i = 0; i < actingPlayer.bench.length; i++) {
@@ -321,25 +357,27 @@ function Turn(actingPlayer, waitingPlayer) {
                     break;
 
             case "Stage1Pokemon":
-                    if(actingPlayer.bench.filter(x => x.evolution === this.id) || actingPlayer.activePokemon.evolution === this.id){
-                        let BasicPokemons = actingPlayer.bench.filter(x => x.evolution === this.id)
-                        let Stage1 = actingPlayer.hand.filter(x => x.name === this.id)[0]
+                let Stage1 = actingPlayer.hand.filter(x => x.name === this.id)[0]
+                let BasicPokemons = actingPlayer.bench.filter(x => x.evolution === this.id)
+                    if(actingPlayer.bench.filter(x => x.evolution === this.id)){  
                         for (let i = 0; i < BasicPokemons.length; i++) {
                             const basicCard = document.getElementById(`Active${BasicPokemons[i].place}`)
                             basicCard.style.boxShadow = "0 0 25px 10px white"
                             basicCard.addEventListener("click", function(event) {
-                                Evolve(Stage1, event.target, BasicPokemons[i].place, BasicPokemons)
+                                Evolve(Stage1, event.target, BasicPokemons[i].place, BasicPokemons, false)
                             }); 
                         }
-                        
+                        if (actingPlayer.activePokemon.evolution === this.id) {
+                            document.getElementById("ActiveSidePokemon").style.boxShadow = "0 0 25px 10px white"
+                            document.getElementById("ActiveSidePokemon").addEventListener("click", function(event) {
+                                Evolve(Stage1, event.target, "ActiveSidePokemon", BasicPokemons, true)
+                            
+                            })
+                        }
                     }
                 break;
             default:
-                break;
-
-                
-                
-            
+                break;        
         }
         if (playable){
             actingPlayer.hand.splice(actingPlayer.hand.indexOf(actingPlayer.hand.filter(x => x.name === this.id)[0]),1)
@@ -358,19 +396,99 @@ function Turn(actingPlayer, waitingPlayer) {
         
     }
     
-    function Evolve(Stage1, basicCard, place, BasicPokemons) {
-        basicCard.style.opacity = 0
-        basicCard.style.backgroundImage=`url(./Img/Cards/${actingPlayer.deckType}/${Stage1.name}.jpg)`
-        actingPlayer.bench[Number(place.replace("Bench",""))-1] = Stage1
-        actingPlayer.bench[Number(place.replace("Bench",""))-1].place = place
-        console.log(actingPlayer.bench);
-        playable = true;
-        basicCard.style.opacity = 1
-        for (let i = 0; i < BasicPokemons.length; i++) {
-            const basicCard = document.getElementById(`Active${BasicPokemons[i].place}`)
-            basicCard.style.boxShadow = "none"
+    //#endregion
+
+
+    function Skills(skillUsed) {
+        if (Number(actingPlayer.activePokemon.skill1_cost) <= actingPlayer.energy && !skillUsed) {
+            document.getElementById("skill1").classList.add("UsableSkill")
+            document.getElementById("skill1").addEventListener("click", function(event) {
+                UseSkill(actingPlayer.activePokemon.skill1_name, actingPlayer.activePokemon.skill1_dmg, skillUsed)})
+        }
+        else{
+            document.getElementById("skill1").classList.remove("UsableSkill")
+            document.getElementById("skill2").removeEventListener("click", function(event) {
+                UseSkill(actingPlayer.activePokemon.skill2_name, actingPlayer.activePokemon.skill2_dmg, skillUsed)})
+        }
+        if (Number(actingPlayer.activePokemon.skill2_cost) <= actingPlayer.energy && !skillUsed) {
+            document.getElementById("skill2").classList.add("UsableSkill")
+            document.getElementById("skill2").addEventListener("click", function(event) {
+                UseSkill(actingPlayer.activePokemon.skill2_name, actingPlayer.activePokemon.skill2_dmg, skillUsed)})
+        }
+        else{
+            document.getElementById("skill2").classList.remove("UsableSkill") 
+            document.getElementById("skill2").removeEventListener("click", function(event) {
+                UseSkill(actingPlayer.activePokemon.skill2_name, actingPlayer.activePokemon.skill2_dmg, skillUsed)})
         }
     }
+
+    function UseSkill(name, dmg, skillUsed){
+        waitingPlayer.activePokemon.hp -= dmg
+        document.getElementById("WaitingHP").innerHTML = "HP : " +  waitingPlayer.activePokemon.hp
+        skillUsed = true
+        Skills(skillUsed)
+    }
+
+    function SelectSwitchPokemon() {
+        console.log(actingPlayer)
+        for (let i = 0; i < actingPlayer.bench.length; i++) {
+            const benchedCard = document.getElementById(`Active${actingPlayer.bench[i].place}`)
+            console.log(benchedCard)
+            if (actingPlayer.bench[i] != "") {
+                benchedCard.style.boxShadow = "0 0 25px 10px white"
+                benchedCard.addEventListener("click", function(event) {
+                    SwitchPokemon(event.target, actingPlayer.bench[i], actingPlayer.bench[i].place, actingPlayer.activePokemon, document.getElementById("ActiveSidePokemon"))
+            }); 
+            }
+            
+        }
+    }
+    function SwitchPokemon(bench, benchedPokemon, place, activePokemon, activeElement) {
+        
+        bench.style.opacity = 0
+        bench.style.backgroundImage=`url(./Img/Cards/${actingPlayer.deckType}/${activePokemon.name}.jpg)`
+        bench.style.opacity = 1
+        activeElement.style.opacity = 0
+        activeElement.style.backgroundImage=`url(./Img/Cards/${actingPlayer.deckType}/${benchedPokemon.name}.jpg)`
+        activeElement.style.opacity = 1
+
+        actingPlayer.bench[Number(place.replace("Bench",""))-1] = activePokemon
+        actingPlayer.bench[Number(place.replace("Bench",""))-1].place = place
+        actingPlayer.activePokemon = benchedPokemon
+
+        for (let i = 0; i < actingPlayer.bench.length; i++) {
+            if (actingPlayer.bench[i] != "") {
+                document.getElementById(`Active${actingPlayer.bench[i].place}`).style.boxShadow = "none"
+                document.getElementById(`Active${actingPlayer.bench[i].place}`).removeEventListener("click", function(event) {
+                    SwitchPokemon(event.target, actingPlayer.bench[i], actingPlayer.bench[i].place, actingPlayer.activePokemon, document.getElementById("ActiveSidePokemon"))}); 
+            }
+        }
+        console.log(actingPlayer)
+    }
+
+    function Evolve(Stage1, basicCard, place, BasicPokemons, active) {
+
+        basicCard.style.opacity = 0
+        basicCard.style.backgroundImage=`url(./Img/Cards/${actingPlayer.deckType}/${Stage1.name}.jpg)`
+        basicCard.style.opacity = 1
+        if (active == false) {
+            actingPlayer.bench[Number(place.replace("Bench",""))-1] = Stage1
+            actingPlayer.bench[Number(place.replace("Bench",""))-1].place = place
+            
+            for (let i = 0; i < BasicPokemons.length; i++) {
+                const basicCard = document.getElementById(`Active${BasicPokemons[i].place}`)
+                basicCard.style.boxShadow = "none"
+            }
+        }
+        else{
+            actingPlayer.activePokemon = Stage1
+            document.getElementById("ActiveSidePokemon").style.boxShadow = "none"
+            Skills(skillUsed)
+
+        }
+        playable = true;
+    }
+
 }
 
 // // Easter Egg 

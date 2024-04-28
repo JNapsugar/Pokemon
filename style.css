@@ -17,39 +17,56 @@ body{
 
 .hand{
     height: 100%;
-    width: 25%;
+    width: 35%;
     border-right: 2px black solid;
     float: left;
     margin-right: 5rem;
-    overflow-y: scroll;
     text-align: center;
+
     & img{
-        width: 70%;
-        margin: 1rem;
+        width: 30%;
+        margin: 0.5rem;
         border-radius: 5%;
+        float: left;
     }
 }
 
+#Tutorial{
+    border: 1px white solid;
+    height: 40%;
+}
 
-.activeRow{
+#PhaseText{
+
+}
+
+#TutorialText{
+    
+}
+
+#ActiveHand{
+    border: 1px white solid;
+    height: 60%;
+    overflow-y: scroll;
+}
+
+#WaitingHand{
+    overflow-y: scroll;
+}
+
+.activeRow, .benchRow{
     display: flex;
     flex-wrap: nowrap;
     align-content: space-evenly;
     height: 50%;
 }
-.benchRow{
-    display: flex;
-    flex-wrap: nowrap;
-    align-content: space-evenly;
-    height: 50%;
-}
-
 
 
 .bench, .discardPile, .activePokemon, .prizes, .energy, .deck{
     border: 2px black solid;
+    border-radius: 1rem;
     height: 90%;
-    width: 10rem;
+    width: 9.5rem;
     margin: 0.5rem 3rem;
     background-size: contain;
     background-position: center;
@@ -57,11 +74,14 @@ body{
     opacity: 1;
     transition: 0.5s;
     box-shadow: none;
+    z-index: 1;
+    position: relative;
     & img{
         height: 100%;
         border-radius: 5%;
     }
 }
+
 
 .discardPile, .deck{
     margin-left: auto;
@@ -125,6 +145,32 @@ hr{
     top: -100%;
 }
 
+.skills{
+    z-index: 2;
+    position: relative;
+    height: 3rem;
+    width: 9.5rem;
+    top: 55%;
+}
+
+#skill1, #skill2,#ActiveHP{
+    height: 1.4rem;
+    width: 90%;
+    display: block;
+    margin: auto;
+    background-image: none !important;
+}
+
+
+#ActiveHP{
+    border: none;
+}
+#WaitingHP{
+    position: relative;
+    top: 50%;
+    padding-left: 0.5rem;
+}
+
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
@@ -141,4 +187,8 @@ hr{
 
 .bench {
     animation: slideIn 0.5s ease-out;
+}
+
+.UsableSkill{
+    box-shadow: 0 0 5px 5px white;
 }
