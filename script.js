@@ -7,15 +7,15 @@ const Bulbasaur = {card_type:"BasicPokemon", name:"Bulbasaur", starting_hp:70, h
 
 const Ivysaur = {card_type:"Stage1Pokemon", name:"Ivysaur", starting_hp:100, hp:100, skill1_name:"Vine Whip", skill1_dmg:"30", skill1_cost:"1", skill2_name:"Razor Leaf", skill2_dmg:"60", skill2_cost:"3", special_skill: false, place:"", dmgCoins:[]};
 
-const Oddish = {card_type:"BasicPokemon", name:"Oddish", starting_hp:50, hp:50, skill1_name:"Absorb", skill1_dmg:"10", skill1_cost:"1", special_skill: true ,evolution:"Gloom", special_skill: false, place:"", dmgCoins:[]};
+const Oddish = {card_type:"BasicPokemon", name:"Oddish", starting_hp:50, hp:50, skill1_name:"Absorb", skill1_dmg:"10", skill1_cost:"1", skill2_name:"null", special_skill: true ,evolution:"Gloom", special_skill: false, place:"", dmgCoins:[]};
 
-const Gloom = {card_type:"Stage1Pokemon", name:"Gloom", starting_hp:90, hp:90, skill1_name:"Mega Drain", skill1_dmg:"60", skill1_cost:"2", special_skill: true, special_skill: false, place:"", dmgCoins:[]};
+const Gloom = {card_type:"Stage1Pokemon", name:"Gloom", starting_hp:90, hp:90, skill1_name:"Mega Drain", skill1_dmg:"60", skill1_cost:"2", skill2_name:"null", special_skill: true, special_skill: false, place:"", dmgCoins:[]};
 
-const Exeggcute = {card_type:"BasicPokemon", name:"Exeggcute", starting_hp:60, hp:60, skill1_name:"Rollout", skill1_dmg:"40", skill1_cost:"2", evolution:"Exeggutor", special_skill: false, place:"", dmgCoins:[]};
+const Exeggcute = {card_type:"BasicPokemon", name:"Exeggcute", starting_hp:60, hp:60, skill1_name:"Rollout", skill1_dmg:"40", skill1_cost:"2", skill2_name:"null",evolution:"Exeggutor", special_skill: false, place:"", dmgCoins:[]};
 
 const Exeggutor = {card_type:"Stage1Pokemon", name:"Exeggutor", starting_hp:120, hp:120, skill1_name:"Seed Bomb", skill1_dmg:"40", skill1_cost:"2", skill2_name:"Barrage Impact", skill2_dmg:"80", skill2_cost:"3", special_skill: false, place:"", dmgCoins:[]};
 
-const Scyther = {card_type:"BasicPokemon", name:"Scyther", starting_hp:80, hp:80, skill1_name:"X-Scissor", skill1_dmg:"20", skill1_cost:"1", special_skill: true, place:"", dmgCoins:[]};
+const Scyther = {card_type:"BasicPokemon", name:"Scyther", starting_hp:80, hp:80, skill1_name:"X-Scissor", skill1_dmg:"20", skill1_cost:"1", skill2_name:"null", special_skill: true, place:"", dmgCoins:[]};
 
 const GrassEnergy = {card_type:"energy", type:"grass", name:"BasicGrassEnergy"}
 
@@ -29,7 +29,7 @@ const Pikachu = {card_type:"BasicPokemon", name:"Pikachu", starting_hp:70, hp:70
 
 const Raichu = {card_type:"Stage1Pokemon", name:"Raichu", starting_hp:100, hp:100, skill1_name:"Electro Ball", skill1_dmg:"30", skill1_cost:"1", skill2_name:"Thunder", skill2_dmg:"60", skill2_cost:"3", special_skill: false, place:"", dmgCoins:[]};
 
-const Magnemite = {card_type:"BasicPokemon", name:"Magnemite", starting_hp:60, hp:60, skill1_name:"Thunder Shock", skill1_dmg:"20", skill1_cost:"1", evolution:"Magneton", special_skill: false, place:"", dmgCoins:[]};
+const Magnemite = {card_type:"BasicPokemon", name:"Magnemite", starting_hp:60, hp:60, skill1_name:"Thunder Shock", skill1_dmg:"20", skill1_cost:"1", skill2_name:"null", evolution:"Magneton", special_skill: false, place:"", dmgCoins:[]};
 
 const Magneton = {card_type:"Stage1Pokemon", name:"Magneton", starting_hp:110, hp:110, skill1_name:"Thunder Shock", skill1_dmg:"20", skill1_cost:"1", skill2_name:"Magnetic Circle" ,skill2_dmg:"20", skill2_cost:"2", special_skill: true, place:"", dmgCoins:[]};
 
@@ -50,12 +50,13 @@ const Charmander = {card_type:"BasicPokemon", name:"Charmander", starting_hp:70,
 
 const Charmeleon = {card_type:"Stage1Pokemon", name:"Charmeleon", starting_hp:100, hp:100, skill1_name:"Ember", skill1_dmg:"1", skill1_cost:"30", skill2_name:"Flamethrower", skill2_dmg:"60", skill2_cost:"3" ,special_skill: false, place:"", dmgCoins:[]};
 
-const Vulpix = {card_type:"BasicPokemon", name:"Vulpix", starting_hp:60, hp:60, skill1_name:"Will-O-Wisp", skill1_dmg:"20", skill1_cost:"1", evolution:"Ninetales",special_skill: false, place:"", dmgCoins:[]};
+const Vulpix = {card_type:"BasicPokemon", name:"Vulpix", starting_hp:60, hp:60, skill1_name:"Will-O-Wisp", skill1_dmg:"20", skill1_cost:"1", skill2_name:"null", evolution:"Ninetales",special_skill: false, place:"", dmgCoins:[]};
 
-const Ninetales = {card_type:"Stage1Pokemon", name:"Ninetales", starting_hp:100, hp:100, skill1_name:"Flame Tail", skill1_dmg:"70", skill1_cost:"2",special_skill: false, place:"", dmgCoins:[]};
+const Ninetales = {card_type:"Stage1Pokemon", name:"Ninetales", starting_hp:100, hp:100, skill1_name:"Flame Tail", skill1_dmg:"70", skill1_cost:"2", skill2_name:"null", special_skill: false, place:"", dmgCoins:[]};
 
 const Growlithe = {card_type:"BasicPokemon", name:"Growlithe", starting_hp:80, hp:80, skill1_name:"Gnaw", skill1_dmg:"30", skill1_cost:"2", skill2_name:"Take Down", skill2_dmg:"50", skill2_cost:"3", evolution:"Arcanine",special_skill: false, place:"", dmgCoins:[]};
-const Arcanine = {card_type:"Stage1Pokemon", name:"Arcanine", starting_hp:140, hp:140, skill1_name:"Flare Blitz", skill1_dmg:"90", skill1_cost:"3", special_skill: true, place:"", dmgCoins:[]};
+
+const Arcanine = {card_type:"Stage1Pokemon", name:"Arcanine", starting_hp:140, hp:140, skill1_name:"Flare Blitz", skill1_dmg:"90", skill1_cost:"3", skill2_name:"null", special_skill: true, place:"", dmgCoins:[]};
 
 const Magmar = {card_type:"BasicPokemon", name:"Magmar", starting_hp:90, hp:90, skill1_name:"Flare", skill1_dmg:"20", skill1_cost:"1",  skill2_name:"Magma Punch", skill2_dmg:"50", skill2_cost:"2", special_skill: false, place:"", dmgCoins:[]};
 
@@ -71,15 +72,15 @@ const Squirtle = {card_type:"BasicPokemon", name:"Squirtle", starting_hp:70, hp:
 
 const Wartortle = {card_type:"Stage1Pokemon", name:"Wartortle", starting_hp:100, hp:100, skill1_name:"Water Gun", skill1_dmg:"30", skill1_cost:"1", skill2_name:"Skull Bash", skill2_dmg:"60", skill2_cost:"3" ,special_skill: false, place:"", dmgCoins:[]};
 
-const Poliwag = {card_type:"BasicPokemon", name:"Poliwag", starting_hp:60, hp:60,  skill1_name:"Pound", skill1_dmg:"20", skill1_cost:"1", evolution:"Poliwhirl",special_skill: false, place:"", dmgCoins:[]};
+const Poliwag = {card_type:"BasicPokemon", name:"Poliwag", starting_hp:60, hp:60,  skill1_name:"Pound", skill1_dmg:"20", skill1_cost:"1", skill2_name:"null", evolution:"Poliwhirl",special_skill: false, place:"", dmgCoins:[]};
 
-const Poliwhirl = {card_type:"Stage1Pokemon", name:"Poliwhirl", starting_hp:90, hp:90, skill1_name:"Wave Splash", skill1_dmg:"50", skill1_cost:"1", special_skill: false, place:"", dmgCoins:[]};
+const Poliwhirl = {card_type:"Stage1Pokemon", name:"Poliwhirl", starting_hp:90, hp:90, skill1_name:"Wave Splash", skill1_dmg:"50", skill1_cost:"1", skill2_name:"null", special_skill: false, place:"", dmgCoins:[]};
 
-const Magikarp = {card_type:"BasicPokemon", name:"Magikarp", starting_hp:30, hp:30, skill1_name:"Splash", skill1_dmg:"10", skill1_cost:"1", evolution:"Gyarados",special_skill: false, place:"", dmgCoins:[]};
+const Magikarp = {card_type:"BasicPokemon", name:"Magikarp", starting_hp:30, hp:30, skill1_name:"Splash", skill1_dmg:"10", skill1_cost:"1", skill2_name:"null", evolution:"Gyarados",special_skill: false, place:"", dmgCoins:[]};
 
 const Gyarados = {card_type:"Stage1Pokemon", name:"Gyarados", starting_hp:160, hp:160, skill1_name:"Tail Smash", skill1_dmg:"90", skill1_cost:"3", skill2_name:"Hyper Beam", skill2_dmg:"120", skill2_cost:"4" ,special_skill: true, place:"", dmgCoins:[]};
 
-const Lapras = {card_type:"BasicPokemon", name:"Lapras", starting_hp:110, hp:110, skill1_name:"Surf", skill1_dmg:"50", skill1_cost:"2", special_skill: false, place:"", dmgCoins:[]};
+const Lapras = {card_type:"BasicPokemon", name:"Lapras", starting_hp:110, hp:110, skill1_name:"Surf", skill1_dmg:"50", skill1_cost:"2", skill2_name:"null", special_skill: false, place:"", dmgCoins:[]};
 
 const WaterEnergy = {card_type:"energy", type:"water", name:"BasicWaterEnergy"}
 
@@ -117,6 +118,7 @@ let player2 = {
 //#region Deck választás, tábla felállítás
 let turns = 1;
 let player1Picked = false
+let knockedOut = false
 //let decks = document.getElementsByClassName("DeckPickerBtn")
 
 const DeckPicker = document.getElementById("DeckPicker")
@@ -278,6 +280,15 @@ function Turn(actingPlayer, waitingPlayer) {
         actingPlayer.deck.splice(random, 1);
 
        
+        if (actingPlayer.activePokemon.skill2_name == "null") {
+            document.getElementById("skill1").style.height = "2.8rem"
+            document.getElementById("skill2").style.height = "0"
+        }
+        else{
+            document.getElementById("skill1").style.height = "1.4rem"
+            document.getElementById("skill2").style.height = "1.4rem"
+        }
+        
 
     //Várakozó játékos
     document.getElementById("WaitingSideDeck").style.backgroundImage = `url(./Img/Cardback.jpg)`;
@@ -303,6 +314,13 @@ function Turn(actingPlayer, waitingPlayer) {
     document.getElementById("WaitingHP").innerText = "HP : " + waitingPlayer.activePokemon.hp;
 
     document.getElementById("TutorialText").innerText=""
+    //#endregion
+
+    //#region Kiutott pokemon esetén
+    if (knockedOut) {
+        SelectSwitchPokemon()
+        knockedOut = false
+    }
     //#endregion
 
     //#region Kártya kijátszás
@@ -403,28 +421,31 @@ function Turn(actingPlayer, waitingPlayer) {
         if (Number(actingPlayer.activePokemon.skill1_cost) <= actingPlayer.energy && !skillUsed) {
             document.getElementById("skill1").classList.add("UsableSkill")
             document.getElementById("skill1").addEventListener("click", function(event) {
-                UseSkill(actingPlayer.activePokemon.skill1_name, actingPlayer.activePokemon.skill1_dmg, skillUsed)})
+                UseSkill(actingPlayer.activePokemon.skill1_name, actingPlayer.activePokemon.skill1_dmg, actingPlayer.activePokemon.special_skill, skillUsed)})
         }
         else{
             document.getElementById("skill1").classList.remove("UsableSkill")
             document.getElementById("skill2").removeEventListener("click", function(event) {
-                UseSkill(actingPlayer.activePokemon.skill2_name, actingPlayer.activePokemon.skill2_dmg, skillUsed)})
+                UseSkill(actingPlayer.activePokemon.skill2_name, actingPlayer.activePokemon.skill2_dmg, actingPlayer.activePokemon.special_skill, skillUsed)})
         }
         if (Number(actingPlayer.activePokemon.skill2_cost) <= actingPlayer.energy && !skillUsed) {
             document.getElementById("skill2").classList.add("UsableSkill")
             document.getElementById("skill2").addEventListener("click", function(event) {
-                UseSkill(actingPlayer.activePokemon.skill2_name, actingPlayer.activePokemon.skill2_dmg, skillUsed)})
+                UseSkill(actingPlayer.activePokemon.skill2_name, actingPlayer.activePokemon.skill2_dmg, actingPlayer.activePokemon.special_skill, skillUsed)})
         }
         else{
             document.getElementById("skill2").classList.remove("UsableSkill") 
             document.getElementById("skill2").removeEventListener("click", function(event) {
-                UseSkill(actingPlayer.activePokemon.skill2_name, actingPlayer.activePokemon.skill2_dmg, skillUsed)})
+                UseSkill(actingPlayer.activePokemon.skill2_name, actingPlayer.activePokemon.skill2_dmg, actingPlayer.activePokemon.special_skill, skillUsed)})
         }
     }
 
-    function UseSkill(name, dmg, skillUsed){
-        waitingPlayer.activePokemon.hp -= dmg
+    function UseSkill(name, dmg, special, skillUsed){
+        waitingPlayer.activePokemon.hp = waitingPlayer.activePokemon.hp - dmg < 0? 0 : waitingPlayer.activePokemon.hp -= dmg
         document.getElementById("WaitingHP").innerHTML = "HP : " +  waitingPlayer.activePokemon.hp
+        if (waitingPlayer.activePokemon.hp <= 0) {
+            knockedOut = true
+        }
         skillUsed = true
         Skills(skillUsed)
     }
@@ -455,6 +476,16 @@ function Turn(actingPlayer, waitingPlayer) {
         actingPlayer.bench[Number(place.replace("Bench",""))-1] = activePokemon
         actingPlayer.bench[Number(place.replace("Bench",""))-1].place = place
         actingPlayer.activePokemon = benchedPokemon
+        document.getElementById("ActiveHP").innerHTML = "HP : " +  actingPlayer.activePokemon.hp
+
+        if (actingPlayer.activePokemon.skill2_name == "null") {
+            document.getElementById("skill1").style.height = "2.8rem"
+            document.getElementById("skill2").style.height = "0"
+        }
+        else{
+            document.getElementById("skill1").style.height = "1.4rem"
+            document.getElementById("skill2").style.height = "1.4rem"
+        }
 
         for (let i = 0; i < actingPlayer.bench.length; i++) {
             if (actingPlayer.bench[i] != "") {
@@ -463,7 +494,6 @@ function Turn(actingPlayer, waitingPlayer) {
                     SwitchPokemon(event.target, actingPlayer.bench[i], actingPlayer.bench[i].place, actingPlayer.activePokemon, document.getElementById("ActiveSidePokemon"))}); 
             }
         }
-        console.log(actingPlayer)
     }
 
     function Evolve(Stage1, basicCard, place, BasicPokemons, active) {
