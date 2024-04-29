@@ -1,6 +1,8 @@
 body{
     margin: 0;
     height: 100vh;
+    overflow: hidden;
+    cursor: url('Img/your-cursor.cur'), auto;
 }
 #board{
     height: 100vh;
@@ -8,17 +10,16 @@ body{
 }
 #waitingSide{
     height: 50%;
-    background-color: lightcoral;
+    background: linear-gradient(45deg, #ff7f50, #ff1493);
 }
 #activeSide{
     height: 50%;
-    background-color: lightskyblue;
+    background: linear-gradient(45deg, #8df763, #76b1f4);
 }
 
 .hand{
     height: 100%;
     width: 35%;
-    border-right: 2px black solid;
     float: left;
     margin-right: 5rem;
     text-align: center;
@@ -28,11 +29,16 @@ body{
         margin: 0.5rem;
         border-radius: 5%;
         float: left;
+        
     }
 }
 
+img {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
 #Tutorial{
-    border: 1px white solid;
+    border: 1px gray solid;
     height: 40%;
 }
 
@@ -45,7 +51,7 @@ body{
 }
 
 #ActiveHand{
-    border: 1px white solid;
+    border: 1px gray solid;
     height: 60%;
     overflow-y: scroll;
 }
@@ -63,7 +69,7 @@ body{
 
 
 .bench, .discardPile, .activePokemon, .prizes, .energy, .deck{
-    border: 2px black solid;
+    border: 2px gray solid;
     border-radius: 1rem;
     height: 90%;
     width: 9.5rem;
@@ -94,7 +100,7 @@ body{
 }
 
 hr{
-    background-color: black;
+    background-color: gray;
     margin: 0;
     height:5px
 }
@@ -181,8 +187,19 @@ hr{
     to { transform: translateY(0); opacity: 1; }
 }
 
+@keyframes rotateIn {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(15deg); }
+}
+
 .card {
     animation: fadeIn 0.3s ease-out;
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+button {
+    cursor: pointer;
 }
 
 .bench {
@@ -193,3 +210,53 @@ hr{
     box-shadow: 0 0 5px 5px white;
 }
 
+.prize{
+    height: 33% !important;
+}
+
+.prizes {
+    animation: fadeIn 0.4s ease-out;
+}
+
+.card:hover {
+    transform: rotate(5deg);
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-10px); }
+    60% { transform: translateY(-5px); }
+}
+
+.UsableSkill {
+    box-shadow: 0 0 5px 5px linear-gradient(gray, gainsboro, gray);
+    animation: bounce 5s infinite;
+}
+
+#DeckPicker div button:hover {
+    animation: bounce 1s infinite;
+}
+
+/* Scrollbar */
+
+/* A scrollbar teljes szélessége */
+::-webkit-scrollbar {
+    width: 10px; /* Vagy a scrollbar magassága vízszintes görgetősáv esetén */
+}
+
+/* A scrollbar nyomvonala */
+::-webkit-scrollbar-track {
+    background: gray; /* A track hátterének színe */
+}
+
+/* A scrollbar fogója */
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(gray, gainsboro, gray); /* A fogó színe */
+    border-radius: 5px; /* A fogó kerekítése */
+    
+}
+
+/* A scrollbar fogója hover állapotban */
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(gray, gainsboro, gray); /* A fogó színe hover állapotban */
+}
