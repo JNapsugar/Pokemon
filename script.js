@@ -642,5 +642,9 @@ function Turn(actingPlayer, waitingPlayer) {
         alert(`${winner.name} nyert!`)
     }
     //#endregion
+
+
 }
+
+
 
