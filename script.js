@@ -186,6 +186,7 @@ function View(index) {
             player1.deckType = deckTypes[index]
             player1.deck = [...allDecks[index]]
             document.getElementById("DeckPickerTitle").innerText = "2. játékos választ paklit"
+            document.getElementById("DeckPickerTitle").style.animation= "bounce 1s 1"
         } else {
             player2.deckType = deckTypes[index]
             player2.deck = [...allDecks[index]]
