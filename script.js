@@ -123,10 +123,61 @@ let player1Picked = false
 let knockedOut = false
 let sound = new Audio();
 
-const DeckPicker = document.getElementById("DeckPicker")
-for (let i = 0; i < deckTypes.length; i++) {
-    DeckPicker.innerHTML += `<div><img src="./Img/Types/${deckTypes[i].toLowerCase()}.jpg"><h2>${deckTypes[i]}</h2>
-    <button onclick="Valaszt(${i})" class="DeckPickerBtn" id="${deckTypes[i]}PickBtn">Választás</button><br><button class="ViewDeckBtn" id="${deckTypes[i]}ViewBtn">Kártyák megtekintése</button></div>`
+ValasztoSetup()
+function ValasztoSetup() {
+    document.getElementById("container").innerHTML = `
+    <button class="vissza"><a href="/Jatekok/index.html"></a>Vissza</button>
+    <h1 id="DeckPickerTitle">1. játékos választ paklit</h1>
+    <div id="DeckPicker"></div>
+    <div class="gif-container">
+        <img src="./Img/pikachu-running.gif" alt="Moving GIF" style="box-shadow: none" width="150rem">
+    </div>
+    
+    <!-- Játékszabályok gomb -->
+    <a href="https://drive.google.com/file/d/1gLxGxMP4TIkLoBAf5zLSbui3UKvtYYwF/view" target="_blank" ><button id="RulesBtn" class="szabalyok">Játékszabályok</button></a>
+    `
+    const DeckPicker = document.getElementById("DeckPicker")
+    for (let i = 0; i < deckTypes.length; i++) {
+        DeckPicker.innerHTML += `<div class="DeckPickerDeck"><img src="./Img/Types/${deckTypes[i].toLowerCase()}.jpg"><h2>${deckTypes[i]}</h2>
+        <button onclick="Valaszt(${i})" class="DeckPickerBtn" id="${deckTypes[i]}PickBtn">Választás</button><br><button onclick="View(${i})" class="ViewDeckBtn" id="${deckTypes[i]}ViewBtn">Kártyák megtekintése</button></div>`
+    }
+    document.body.style.background = "linear-gradient(110deg, rgb(6, 190, 15), rgb(255, 230, 0), rgb(190, 6, 6),rgb(9, 206, 241))";
+    document.body.style.overflow = "hidden";
+}
+
+
+function View(index) {
+    let volt = false
+    document.getElementById("container").innerHTML = `<div id="ViewCards"></div>`
+    document.getElementById("ViewCards").innerHTML = `<button id="ViewVissza">Vissza</button><h1>${deckTypes[index]}</h1>`
+    for (let i = 0; i < allDecks[index].length; i++) {
+        if ((allDecks[index][i].card_type == "energy" && !volt) || allDecks[index][i].card_type == "potion") {
+            document.getElementById("ViewCards").innerHTML += `<br>`
+            volt = true
+        }
+        document.getElementById("ViewCards").innerHTML += `<img src="./Img/Cards/${deckTypes[index]}/${allDecks[index][i].name}.jpg">`
+    }
+    document.body.style.overflow = "auto";
+    
+    document.getElementById("ViewVissza").onclick = ValasztoSetup
+    switch (deckTypes[index]) {
+        case "Grass":
+            document.body.style.background = "linear-gradient(45deg, #3c7526, #6bc959)";
+            break;
+        case "Lightning":
+            document.body.style.background = "linear-gradient(45deg, #fae68e, #ffdb0f)";
+            break;
+        case "Fire":
+            document.body.style.background = "linear-gradient(45deg, #f39932, #f14949)";
+            break;
+        case "Water":
+            document.body.style.background = "linear-gradient(45deg, #1c43c4, #8dcfe9)";
+            break;
+        default:
+            break;
+    }
+    document.body.style.backgroundAttachment = "fixed"
+
 }
 
     function Valaszt(index) {

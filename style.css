@@ -4,14 +4,23 @@ body{
     overflow: hidden;
     cursor: url('Img/your-cursor.cur'), auto;
     background: linear-gradient(110deg, rgb(6, 190, 15), rgb(255, 230, 0), rgb(190, 6, 6),rgb(9, 206, 241));
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: Georgia;
 }
+
+button{
+    font-family: Georgia;
+}
+
 #board{
     height: 100vh;
     padding: 0, 3rem;
 }
 #waitingSide{
     height: 50%;
-    background: linear-gradient(45deg, #ff7f50, #ff1493);
+    background: linear-gradient(45deg,#ff7f50, #ff1493);
+    background: linear-gradient(45deg, #fae68e, #ffdb0f);
 }
 #activeSide{
     height: 50%;
@@ -112,23 +121,33 @@ hr{
     flex-wrap:nowrap;
     justify-content: space-evenly;
     text-align: center;
-   
+
     & div{
         background-color: rgb(255, 255, 255, 0.3);
         border: 3px black solid;
+        border-radius: 0.6rem;
         & img{
             height: 25rem;
+            border-radius: 0.5rem;
+            border-bottom-left-radius: 2rem;
+            border-bottom-right-radius: 2rem;
         }
         & button{
             height: 2rem;
             margin-bottom: 1rem;
+            border-radius: 1rem;
+            padding: 0.5rem;
+            background: linear-gradient(45deg, #ffffff, #b6b6b6);
+        }
+        & button:hover{
+            background: linear-gradient(45deg, #b6b6b6, #ffffff);
         }
     }
 }
 
 #DeckPickerTitle{
     text-align: center;
-    padding: 5rem;
+    padding: 3rem;
 }
 
 .PlacedEnergy, .PlacedEnergy:nth-child(2), .PlacedEnergy:nth-child(3), .PlacedEnergy:nth-child(4){
@@ -283,3 +302,47 @@ button {
     }
   
   
+.szabalyok{
+    display: block;
+    margin: 3rem auto;
+    height: 2.5rem;
+    border-radius: 1rem;
+    padding: 0.5rem;
+    background-color: #ffffffb0;
+
+    &:hover{
+        background-color: #ffffffef;
+    }
+
+}
+
+.vissza, #EndTurnBtn, #ViewVissza{
+    margin: 1rem;
+    width: 6rem;
+    height: 2rem;
+    border-radius: 0.5rem;
+    background-color: #ffffffb0;
+
+    &:hover{
+        background-color: #ffffffef;
+    }
+}
+
+#ViewCards{
+    display: block;
+    margin: auto;
+    width: 60%;
+    text-align: center;
+
+    img{
+        height: 20rem;
+        margin: 1rem;
+        border-radius: 0.7rem;
+    }
+
+    button{
+        position: absolute;
+        left: 0;
+        margin-left:1rem;
+    }
+}
